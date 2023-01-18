@@ -1,0 +1,71 @@
+.navbar_app_logo{
+    width: 100%;
+    /* border: 1px solid red; */
+    height:auto;
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+    box-shadow: 0px 2px 8px 0px rgb(0 0 0 / 6%);
+    position: fixed;
+}
+.navbar_app{
+    font-size: 11px;
+    color: #757575;
+/* margin-top: 6px; */
+text-align: right;
+padding-right: 45px;
+}
+.navbar_app:hover{
+    cursor: pointer;
+   }
+.nav_app_logo{
+font-size: 18px;
+padding-top: 10px;
+   }
+   .nav_main_logo{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid blue; */
+   }
+   .nav_search_bar{
+    flex-grow: 10;
+    margin-left: 100px;
+    padding: 15px 0px;
+    padding-bottom: 10px;
+   }
+.nav_search_bar_input{
+    width: 65%;
+    /* margin-top: 15px; */
+    line-height: 35px;
+    border: none;
+    outline-width: none;
+    background-color: #e9f6f7;
+    
+}
+.nav_search_button{
+    width: 5%;
+    padding: 10px;
+    border: none;
+    line-height: 17px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #e9f6f7;
+   }
+   .nav_search_btn{
+    width: 16%;
+    padding: 10px;
+    border: none;
+    line-height: 17px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-image: -webkit-linear-gradient(0deg,#ff934b 0%,#ff5e62 100%);
+   }
+   .nav_noti_icon{
+    display: flex;
+    flex-grow: 1;
+    gap: 30px;
+    padding-top: 18px;
+
+}
