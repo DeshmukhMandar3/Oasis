@@ -8,9 +8,9 @@ const rootReducer = combineReducers({
 })
 // ---Redux DevTools
 let composeEnhancers = compose;
-if (typeof window !== 'undefined') {
-  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-}
+// if (typeof window !== 'undefined') {
+//   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// }
 const store = legacy_createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 export default store;
