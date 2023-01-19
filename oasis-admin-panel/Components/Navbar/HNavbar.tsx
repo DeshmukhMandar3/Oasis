@@ -2,7 +2,7 @@ import React from 'react'
 import DeskTopNav from './DesktopNav'
 import MobileNav from './MobileNav'
 
-const HNavbar = () => {
+const HNavbar = ():JSX.Element => {
   return (
     <>
       <DeskTopNav/>
