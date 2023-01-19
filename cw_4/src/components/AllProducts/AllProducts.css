@@ -21,6 +21,7 @@
   background-color: white;
   width: 73%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding-top: 5px;
 }
 
 .flex_filter-products {
@@ -42,7 +43,36 @@
 .subCategory {
   color: rgb(117, 117, 117);
   border: solid 0.5px;
+  border-radius: 3px;
   font-size: 13px;
-  margin: 5px;
+  margin-right: 5px;
   padding: 5px;
+}
+
+.sort {
+  /* border: solid red; */
+  width: 50%;
+  justify-content: space-evenly;
+  font-size: 13px;
+  color: rgb(117, 117, 117);
+  cursor: pointer;
+}
+
+.total-products {
+  font-size: 13px;
+  color: rgb(53, 53, 53);
+}
+
+.sort-cat:hover {
+  color: rgb(36, 163, 181);
+}
+
+.prod-sort {
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.sort-select {
+  color: rgb(36, 163, 181);
+  border-bottom: solid rgb(36, 163, 181);
 }
