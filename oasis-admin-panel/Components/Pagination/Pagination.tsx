@@ -12,16 +12,15 @@ interface propsType {
 let BTN_COUNT = 5
 
 const getStartingIdx = (current:number, total:number):number => {
-    if (total-current<2) return Math.max(current-(BTN_COUNT-1-total+current))
+    if (total-current<2) return Math.max(current-(BTN_COUNT-1-total+current), 1)
     return Math.max(current-2, 1)
 }
 
 const Pagination = ({current, total, handlePageChange}: propsType) => {
     let btns = []
     let start = getStartingIdx(current, total)
-    for (let i=start; i<start+BTN_COUNT; i++){
-        console.log(i===current)
-        btns.push(<Button size="xs" background="transparent" isDisabled={i===current} onClick={()=>handlePageChange(i)}>{i}</Button>)
+    for (let i=start; i<Math.min(start+BTN_COUNT, total+1); i++){
+        btns.push(<Button key={i} size="xs" background="transparent" isDisabled={i===current} onClick={()=>handlePageChange(i)}>{i}</Button>)
     }
   return (
     <Flex gap="5px" mt="20px" align="center">
