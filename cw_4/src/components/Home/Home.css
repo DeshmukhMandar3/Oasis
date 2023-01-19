@@ -1,0 +1,87 @@
+body {
+    background-color: #eff7fa;
+   }
+
+   .just_after_nav {
+    display: flex;
+    gap: 20px;
+    height: 400px;
+    width: 99%;
+    margin: auto;
+    margin-top: 12%;
+  }
+  .sliding_after_nav {
+    flex: 4;
+    height: 390px;
+    margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+  }
+  .sliding_images {
+    height: 330px;
+  }
+  .sliding_images {
+    cursor: pointer;
+    background-image: url("https://cdn.shopclues.com/images/banners/HB4_FashionSaturday_Web_sk_22Jan22.jpg");
+    background-size: 100% 100%;
+    animation: slider 12s infinite linear;
+  }
+  
+  @keyframes slider {
+    0% {
+      background-image: url("https://cdn.shopclues.com/images/banners/2023/Jan/19/HB1_Refurb_Web_SYM_19Jan23.jpg");
+      
+    }
+    20% {
+      background-image: url("https://cdn.shopclues.com/images/banners/2023/Jan/20/HB2_Blockbuster_Web_SYM_20Jan23.jpg");
+    }
+    40% {
+      background-image: url("https://cdn.shopclues.com/images/banners/2023/Jan/20/HB3_Prebuzz_Web_SYM_20Jan23.jpg");
+    }
+    60% {
+      background-image: url("https://cdn.shopclues.com/images/banners/2023/Jan/19/JMAX_HB2_Web_Riya_19Jan22.jpg");
+    }
+    80% {
+      background-image: url("https://cdn.shopclues.com/images/banners/2023/Jan/11/ShopcluesPCRefresh_Web_SYM_11Jan23.jpg");
+    }
+  }
+  
+  .sliding_images_name {
+    display: flex;
+    background-color: white;
+  }
+  .sliding_images_name div {
+    width: 210px;
+    height: 70px;
+  }
+  .sliding_images_name p {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 10px;
+    color: gray;
+    font-weight: 500;
+  }
+  
+  .sliding_images_name p:hover {
+    color: #24a3b5;
+    cursor: pointer;
+  }
+  
+  .recommodation_after_nav {
+    flex: 1;
+    /* border: 2px solid red; */
+    margin-right: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+  }
+  .recommodation_after_nav img {
+    width: 80%;
+    height: 126px;
+  }
+  .single_line {
+    height: 2px;
+    background-color: #eff7fa;
+  }
