@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+.sidebar{
+  width: 300px;
+  border-right: 1px solid gray;
+  height: 450px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+.form-input{
+  border-bottom: 1px solid gray;
+  outline: none;
+  width: 80px;
+  gap: 25px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+
+}
+.form-style{
+  width:400px;height:400px ; align-items:center;margin:auto;
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.input-fill{
+  border-bottom: 1px solid gray;
+  outline: none;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.cart-nav{
+  display: flex;
+  width: 100%;
+  height:70px;
+  border: 1px solid gray;
+  justify-content: space-around;
+  padding: 10px;
+}
+.cart-nav img{
+   margin-left: 70px;
+  
+   
+}
