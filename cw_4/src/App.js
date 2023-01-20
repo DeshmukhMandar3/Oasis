@@ -5,9 +5,7 @@ import Payment from "./Pages/Payment/Payment";
 function App() {
   return (
     <div className="App">
-        <Payment/>
       <GeneralRoutes />
-    
     </div>
   );
 }

@@ -2,11 +2,17 @@ import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Star from "../StarRating/StarRating";
 import "./ProductCard.css";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ card }) => {
   const [dis, setDis] = React.useState(false);
+  const navigate = useNavigate();
   return (
-    <Flex className="card_wrapper" display={dis ? "none" : "block"}>
+    <Flex
+      className="card_wrapper"
+      display={dis ? "none" : "block"}
+      onClick={() => navigate(`/ProductDetails/${card.id}`)}
+    >
       <Box className="wishlist">
         <span class="material-symbols-rounded">favorite</span>
       </Box>
