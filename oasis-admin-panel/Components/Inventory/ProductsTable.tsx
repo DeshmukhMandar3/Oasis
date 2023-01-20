@@ -63,7 +63,7 @@ const ProductsTable = ({data, count, params}:PropsType) => {
             </Tr>
           </Thead>
           <Tbody>
-            {data && data.map(prod=><ProductRow {...prod}/>)}
+            {data && data.map(prod=><ProductRow key={prod.id} {...prod}/>)}
           </Tbody>
           <Tfoot>
             <Tr>
