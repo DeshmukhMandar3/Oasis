@@ -11,11 +11,15 @@ import Product from "./Pages/product/Product";
 function App() {
   return (
     <div className="App">
+    fw19_0864_day-3
       
       <Mycart/>
         <Payment/>
       {/* <GeneralRoutes /> */}
     
+
+      <GeneralRoutes />
+ main
     </div>
   );
 }
