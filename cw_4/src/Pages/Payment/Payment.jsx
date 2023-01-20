@@ -1,4 +1,4 @@
-import {  Text,Radio,RadioGroup,Stack } from '@chakra-ui/react'
+import {  Text,Radio,RadioGroup,Stack, useToast } from '@chakra-ui/react'
 
 import React from 'react'
 import { useState } from 'react'
@@ -7,6 +7,8 @@ import Nav from './Nav'
 
 const Payment = () => {
 
+  
+  
 
   const [card,setCard]=useState("")
   const [name,setname]=useState("")
@@ -18,10 +20,6 @@ const Payment = () => {
 
    const handleCard=(e)=>{
     setCard(e.target.value)
-
-   
-  
-
 
    }
    const handleMonth=(e)=>{
@@ -42,6 +40,24 @@ const Payment = () => {
     setNick(e.target.value)
    }
 
+   
+
+   const toast = useToast()
+   const handleClick=()=>{
+    // if(card===""){
+    //   alert("please fill details")
+    
+    // }
+    return(
+      toast({
+        title: 'Payment Success .',
+        description: "Pealse Wait some time.",
+        status: 'success',
+        duration: 9000,
+        isClosable: false,
+      }))
+    
+  }
 
   return (
     <div>
@@ -52,32 +68,27 @@ const Payment = () => {
       
         <RadioGroup defaultValue='2' marginLeft={"60px"}>
   <Stack margin={"15px"} >
-    <Radio value='1' >
+    <Radio   colorScheme='orange' value='1' >
      Debit Card
     </Radio>
-    <Radio  value='2' color={"orange"}>Credit Card</Radio>
-    <Radio value='3'>Net Banking</Radio>
-    <Radio value='4'>ZestMoney</Radio>
-    <Radio value='5'>Paytm</Radio>
-    <Radio value='6'>UPI</Radio>
-    <Radio value='7'>Wallets</Radio>
-    <Radio value='8'>Gift Cards</Radio>
-    <Radio value='9'>EMI</Radio>
+    <Radio  colorScheme='orange'  value='2' color={"orange"}>Credit Card</Radio>
+    <Radio colorScheme='orange'  value='3'>Net Banking</Radio>
+    <Radio colorScheme='orange'  value='4'>ZestMoney</Radio>
+    <Radio colorScheme='orange'  value='5'>Paytm</Radio>
+    <Radio colorScheme='orange'  value='6'>UPI</Radio>
+    <Radio colorScheme='orange'  value='7'>Wallets</Radio>
+    <Radio colorScheme='orange'  value='8'>Gift Cards</Radio>
+    <Radio colorScheme='orange'  value='9'>EMI</Radio>
   </Stack>
 </RadioGroup>
 
       </div>
 
-      
  <div>
    <div><Text fontSize={"2xl"} fontWeight="bold" textAlign={"left"}>Credit Card</Text></div>
     <form action="" className='form-style' >
       <br />
    <input type="number" placeholder=' Enter card number' className='input-fill' onChange={handleCard} value={card} />
-
-
-
-
 
 
    <div className='flex'>
@@ -88,9 +99,13 @@ const Payment = () => {
    <input onChange={handlename} value={name} className='input-fill' type="text" placeholder=' Enter name on card' />
    <input onChange={handlenick} value={nick} className='input-fill' type="text" placeholder=' Nickname (for easy identification)'  />
   
-    <button style={{backgroundColor: "orange",color:"white",padding:"10px" , fontSize:"large", width:"90%",borderRadius:"5px"}}>Pay-Rs000</button>
+    <button   onClick={handleClick}  className="payment-btn" style={{padding:"12px",fontSize:"larger",fontWeight:"bold"}} >Pay-Rs 999</button>
     </form>
 
+ <div style={{display:"flex"}}>
+   <img style={{width:"120px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIJWg9eQqmG1C3pYaYHG9IXddxo4Ao79Lo4Q&usqp=CAU" alt="" />
+
+ </div>
  </div>
 
  <div><Text fontSize={"larger"} fontWeight="bold">Bank/Wallet Offers</Text></div>
@@ -100,5 +115,6 @@ const Payment = () => {
     </div>
   )
 }
+
 
 export default Payment
