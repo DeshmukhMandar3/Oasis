@@ -2,6 +2,7 @@
 import React from "react";
 import "./Navbar.css"
 import logoimg from "../sources/prologo.jpg"
+import { Link } from "react-router-dom";
 
 const Navbar=()=>{
    
@@ -121,7 +122,7 @@ const Navbar=()=>{
 
 {/* Mobiles & More dropdown options */}
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">Mobiles & More</a>
+<a href="#allproducts">mobiles & more</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -129,7 +130,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">Men</a>
+<a href="#">Men</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -137,7 +138,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">women</a>
+<a href="#">women</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -145,7 +146,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">home & kitchen</a>
+<a href="#">home & kitchen</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -153,7 +154,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">appliances</a>
+<a href="#">appliances</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -161,7 +162,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">sports & more</a>
+<a href="#">sports & more</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -169,7 +170,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">essentials</a>
+<a href="#">essentials</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -177,7 +178,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">offers</a>
+<a href="#">offers</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -185,7 +186,7 @@ const Navbar=()=>{
 </li>
 
 <li id="navbar_dropdown1_part">
-<a href="/ProductListPage.html">global shopping</a>
+<a href="#">global shopping</a>
 <div className="navbar_menu_wrap_part">
     <div className="navbar_ul_menu_block_part">
 </div>
@@ -196,6 +197,17 @@ const Navbar=()=>{
 </div>
 {/* End of Mobiles & More dropdown options */}
 
+{/* navbar third section start */}
+<div id="navbar_third_setion_start">
+<Link to="/babycare" className="navbar_third_section_link">Baby Care</Link>
+<Link to="/foodandbeverage" className="navbar_third_section_link">Food and Beverage</Link>
+<Link to="/" className="navbar_third_section_link">Home Cleaning</Link>
+<Link to="/" className="navbar_third_section_link">Personal Hygiene</Link>
+<Link to="/" className="navbar_third_section_link">Kitchen & Dining</Link>
+<Link to="/" className="navbar_third_section_link">Mobile Accessories</Link>
+<Link to="/" className="navbar_third_section_link">Refurbished Mobiles</Link>
+<Link to="/" className="navbar_third_section_link">Women Care</Link>
+</div>
 
 </>
     )
