@@ -9,21 +9,21 @@ export default function Star({ rating }) {
         {+rating >= index + 1 ? (
           <span
             class="material-symbols-outlined"
-            style={{ color: "RGB(207 185 18)", fontSize: "20px" }}
+            style={{ color: "RGB(255,140,78)", fontSize: "20px" }}
           >
             star
           </span>
         ) : +rating >= number ? (
           <span
             class="material-symbols-sharp"
-            style={{ color: "RGB(207 185 18)", fontSize: "20px" }}
+            style={{ color: "RGB(255,140,78)", fontSize: "20px" }}
           >
             star_half
           </span>
         ) : (
           <span
             class="material-symbols-sharp"
-            style={{ color: "RGB(207 185 18)", fontSize: "20px" }}
+            style={{ color: "RGB(255,140,78)", fontSize: "20px" }}
           >
             star
           </span>
