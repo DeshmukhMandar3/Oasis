@@ -5,28 +5,19 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
 
 const { ToastContainer, toast } = createStandaloneToast()
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
- fw19_0864_day-3
-  <React.StrictMode>
-    <BrowserRouter>
+     <BrowserRouter>
       <ChakraProvider >
-      
-        <App />
+       <App />
         <ToastContainer />
       </ChakraProvider>
     </BrowserRouter>
-  </React.StrictMode>
-  <BrowserRouter>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
-  </BrowserRouter>
- main
+ 
+
 );
 
 // If you want to start measuring performance in your app, pass a function
