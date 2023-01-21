@@ -2,9 +2,11 @@ import { legacy_createStore, combineReducers, compose, applyMiddleware } from 'r
 
 import thunk from 'redux-thunk'
 import productsReducer from './products/products.reducer'
+import productReducer from './product/product.reducer'
 
 const rootReducer = combineReducers({
-    Products: productsReducer
+    Products: productsReducer,
+    Product: productReducer
 })
 // ---Redux DevTools
 let composeEnhancers = compose;
