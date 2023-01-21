@@ -16,8 +16,9 @@ import {
 } from "@chakra-ui/react";
 import "./AllProducts.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import { useParams } from "react-router-dom";
 
-const AllProducts = ({ category }) => {
+const AllProducts = () => {
   // Styling purpose
   const [Sort, setSort] = React.useState(null);
 
@@ -39,7 +40,8 @@ const AllProducts = ({ category }) => {
   const [Rating, setRating] = React.useState([0, 5]);
 
   //fetching data from server
-
+  const { category } = useParams();
+  console.log(category);
   React.useEffect(() => {
     async function getData() {
       let type;
