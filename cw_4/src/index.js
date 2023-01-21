@@ -11,22 +11,23 @@ const { ToastContainer, toast } = createStandaloneToast()
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
- fw19_0864_day-3
-  <React.StrictMode>
-    <BrowserRouter>
-      <ChakraProvider >
+ 
+  
+    // <BrowserRouter>
+    //   <ChakraProvider >
       
-        <App />
-        <ToastContainer />
-      </ChakraProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    //     <App />
+       
+    //   </ChakraProvider>
+    // </BrowserRouter>
+ 
   <BrowserRouter>
     <ChakraProvider>
       <App />
+      <ToastContainer />
     </ChakraProvider>
   </BrowserRouter>
- main
+ 
 );
 
 // If you want to start measuring performance in your app, pass a function

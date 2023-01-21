@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <div className='payment-nav'>
 
-        <div><img src="https://64.media.tumblr.com/09ac90e7b00b5b8314fc7b237e0baaf3/08ad9d2d7ec42ac6-d8/s500x750/b8155fb35beaaa73f386af6c608b200494465d8f.pnj" alt="logo" /></div>
+        <div ><img style={{width:"160px"}}  src="https://scontent.fpnq14-1.fna.fbcdn.net/v/t39.30808-6/326521603_1604968816640846_9105269804802444165_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=ok0kd7s6pq4AX8C5Lu5&_nc_ht=scontent.fpnq14-1.fna&oh=00_AfAgE0evpYYBsmEWxur5_UCLg8YxwIOUIrJDFdYvmH2lHg&oe=63D12D96" alt="logo" /></div>
         <div>
         <RadioGroup defaultValue='2'>
   <Stack spacing={4} direction='row'>
