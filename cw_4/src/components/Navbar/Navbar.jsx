@@ -2,9 +2,39 @@
 import React from "react";
 import "./Navbar.css"
 import logoimg from "../sources/prologo.jpg"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+
+// search functionality function
+export const fetchDataBySearch = async(query, page) => {
+    console.log("query 11",query)
+    let res=await fetch(`https://backend-cw-4.onrender.com/Products?q=${query}&_page=${page}&_limit=10`)
+    res=await res.json()
+    return res;
+   };
+ 
+  
 
 const Navbar=()=>{
+   
+    // search functionality state manage and function call
+    const [query, setQuery] = useState("");
+    const [data, setdata] = useState([]);
+    const [page, setPage] = useState(1);
+    useEffect(() => {
+        try {
+          if (query !== "") {
+            console.log("query 27",query)
+            fetchDataBySearch(query, page).then((res) =>{
+            console.log(res)
+            setdata(res)
+          })
+          }
+        } catch (error) {
+          console.log("error:", error);
+        }
+      }, [query, page]);
    
     return (
         <>
@@ -31,10 +61,37 @@ const Navbar=()=>{
 
     <div className="navbar_search_box">
         <span>
-            <input type="text" placeholder="What is on your mind today?" />
+            <input type="text"
+                onChange={(e) => setQuery(e.target.value)} placeholder="What is on your mind today?" />
             <button className="navbar_srch_btn">Search</button>
         </span>
     </div> 
+    {/* search functionality start*/}
+        {
+            data.map((el)=>{
+                return(
+                    <div className="search_div_box_start_nav">
+                        <div className="search_div_box_start_nav_second_div">
+                    <NavLink className="search_div_functionality_nav"
+                        to={`/singleproduct/${el.id}`}
+                        key={el.id}
+                        >
+                            {/* <img src={el.product_url} alt="products" /> */}
+                            <h2>{el.product_name}</h2> 
+                            <p>{el.discounted_price}</p>
+                        </NavLink>
+                        </div>
+                        <button disabled={page <= 1} onClick={() => setPage(page - 1)}>
+                  Prev
+                </button>
+                <button onClick={() => setPage(page + 1)}>Next</button>
+                        </div>
+                        )
+            })
+            
+        }
+        
+     {/* search functionality end*/}
     {/* address wishlist notification cart signin part */}
     <div className="navbar_address_section">
         <ul>

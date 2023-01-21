@@ -29,7 +29,7 @@ const brand_data = [
       name: "Realme",
       dis: "Save Upto Rs. 5000",
     },
-    
+   
   ];
 
   export default brand_data

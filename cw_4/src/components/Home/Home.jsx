@@ -12,6 +12,7 @@ import trending_data from "../data/trendingdata";
 import sports_data from "../data/sportsdata";
 import brand_data from "../data/branddata";
 import branded_deal_data from "../data/brandeddealdata";
+import Footer from "../Footer/Footer";
 // console.log(gadget_data)
 
 const Home=()=>{
@@ -351,6 +352,7 @@ const Home=()=>{
 
 
     </div>
+    <Footer/>
 </>
     )
 }

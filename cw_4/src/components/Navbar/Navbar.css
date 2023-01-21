@@ -87,7 +87,28 @@
     top: 48px;
     
 }
-
+/* search functionality div */
+.search_div_box_start_nav
+{
+    border: 1px solid #24a3b5;
+    width:"100%";
+    /* height: 300px; */
+    display:"flex";
+    flex-direction:"column";
+    gap:2px;
+   overflow-y:"scroll";
+   background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  .search_div_box_start_nav_second_div{
+    height: 100px;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+.search_div_functionality_nav{
+    text-decoration: none;
+    color: black;
+    }
 /* address wishlist notification cart signin part*/
 
 .navbar_address_section{
