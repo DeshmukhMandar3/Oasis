@@ -8,9 +8,21 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  button,
   Flex,
   Image,
+  SimpleGrid,
   Text,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  CircularProgress,
+  CircularProgressLabel,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
 } from "@chakra-ui/react";
 import Star from "../../components/StarRating/StarRating";
 
@@ -58,7 +70,7 @@ const ProductDetails = () => {
           </Box>
           <Box class="display-img">
             <Image
-              height={"300px"}
+              height={"400px"}
               display="block"
               margin="auto"
               src={Product && Product[0].image[img]}
@@ -102,7 +114,7 @@ const ProductDetails = () => {
                   ₹{Product && Product[0].discounted_price}
                 </Text>
                 <Text className="mrp">
-                  MRP : ₹{Product && Product[0].discounted_price}
+                  MRP : ₹{Product && Product[0].retail_price}
                 </Text>
                 <Text className="discount">
                   {Product && Product[0].discount.toFixed(2)}% Off
@@ -136,8 +148,294 @@ const ProductDetails = () => {
               </Badge>
             </Box>
           </Flex>
+          <Box className="coupon-wrapper">
+            <Flex className="final-Price">
+              <Box width={"7%"}>
+                <Image src="https://images.shopclues.com/images/ui/super-star.png" />
+              </Box>
+              <Text className="getThis">
+                Get this for as low as:{" "}
+                <span style={{ color: "green" }}>
+                  {" "}
+                  ₹{Product && Product[0].discounted_price - 82}
+                </span>
+              </Text>
+              <Text className="oasis-bucks">How to earn OasisBucks</Text>
+            </Flex>
+            <Flex className="Price-wrapper">
+              <Box className="og">
+                <Box className="l1">
+                  <Text>Original Price</Text>
+                </Box>
+                <Box className="l2">
+                  ₹{Product && Product[0].discounted_price}
+                </Box>
+              </Box>
+              <Box className="applicable">
+                <Box className="m1">Applicable for All Users</Box>
+                <Flex className="m2">
+                  <Box className="m2c">Apply cluesbucks+</Box>
+                  <Box className="m2c">Use Coupon MYOASIS</Box>
+                </Flex>
+                <Flex className="m3">
+                  <Box>{"( "}₹12</Box>
+                  <Box>+</Box>
+                  <Box>₹70{" )"}</Box>
+                </Flex>
+              </Box>
+              <Box className="dp">
+                <Box className="dp1">Deal Price</Box>
+                <Box className="dp2">
+                  ₹{Product && Product[0].discounted_price - 82}
+                </Box>
+              </Box>
+            </Flex>
+          </Box>
+          <Box className="one-more-offer">
+            <Flex className="offer-tag">
+              <Text marginRight={"5px"}>1 offer Available</Text>
+              <span
+                style={{ fontSize: "18px", color: "rgb(36, 163, 181)" }}
+                class="material-symbols-outlined"
+              >
+                sell
+              </span>
+            </Flex>
+            <Flex className="MYOASIS">
+              <Badge padding="5px" colorScheme="green" variant={"outline"}>
+                MYOASIS
+              </Badge>
+              <Text fontSize={"14px"}>
+                Get Extra 10 Percent off on Prepaid Orders
+              </Text>
+            </Flex>
+          </Box>
+          <Flex className="buttons">
+            <button className="add">ADD TO CART</button>
+            <button className="buy">BUY NOW</button>
+          </Flex>
+          <Flex alignItems={"center"}>
+            <Flex className="item-av">
+              <span class="material-symbols-outlined">where_to_vote</span>
+              <Text>
+                Item is available at{" "}
+                <span style={{ color: "black" }}>421503</span>
+              </Text>
+            </Flex>
+            <Text className="change">Change</Text>
+          </Flex>
+          <Box className="shipping">
+            <Flex>
+              <span
+                class="material-symbols-outlined"
+                style={{ color: "rgb(22, 112, 124)" }}
+              >
+                check
+              </span>
+              <Text>Free Shipping</Text>
+            </Flex>
+            <Flex>
+              <span
+                class="material-symbols-outlined"
+                style={{ color: "rgb(22, 112, 124)" }}
+              >
+                check
+              </span>
+              <Text>COD available</Text>
+            </Flex>
+          </Box>
+          <Box className="Returns">
+            <Flex>
+              <span class="material-symbols-outlined">
+                published_with_changes
+              </span>{" "}
+              <Text marginLeft={"5px"}>Easy Returns & Replacement</Text>
+            </Flex>
+            <Flex>
+              <span class="material-symbols-outlined">credit_card</span>
+              <Text marginLeft={"5px"}>
+                Payment Options:(Credit Card, Debit Card, Net Banking, Wallets,
+                COD)
+              </Text>
+            </Flex>
+          </Box>
         </Box>
       </Flex>
+      {/* Product Details */}
+      <Box className="prod-middle">
+        <Box>
+          <Text className="head">Product Details</Text>
+          <Text className="name">{Product && Product[0].product_name}</Text>
+        </Box>
+        <Box className="tabs">
+          <Tabs colorScheme="cyan">
+            <TabList>
+              <Tab>Product Description</Tab>
+              <Tab>Specification</Tab>
+              <Tab>Legal Information</Tab>
+            </TabList>
+
+            <TabPanels textAlign={"left"} padding={"15px"} lineHeight={"30px"}>
+              <TabPanel>
+                <p>{Product && Product[0].description}</p>
+              </TabPanel>
+              <TabPanel>
+                {Product &&
+                  Product &&
+                  Product[0].product_specifications.product_specification.map(
+                    (el) => {
+                      if (el.key) {
+                        return (
+                          <Flex>
+                            <Text width="400px">{el.key}</Text>
+                            <Text margin={"0px 4px"} color="black">
+                              :
+                            </Text>
+                            <Text color="black">{el.value}</Text>
+                          </Flex>
+                        );
+                      }
+                    }
+                  )}
+              </TabPanel>
+              <TabPanel>
+                <Flex>
+                  <Text width="400px">
+                    Maximum Retail Price (inclusive of all taxes)
+                  </Text>
+                  <Text color="black">
+                    : ₹{Product && Product[0].retail_price}
+                  </Text>
+                </Flex>
+                <Flex>
+                  <Text width="400px">Common or Generic Name</Text>
+                  <Text color="black">: -</Text>
+                </Flex>
+                <Flex>
+                  <Text width="400px">Net Contents / Net Quantity</Text>
+                  <Text color="black">: -</Text>
+                </Flex>
+                <Flex>
+                  <Text width="400px">Manufacturer's Name and Address</Text>
+                  <Text color="black">: -</Text>
+                </Flex>
+                <Flex>
+                  <Text width="400px">Packer's Name and Address</Text>
+                  <Text color="black">: -</Text>
+                </Flex>
+                <Flex>
+                  <Text width="400px">Importer's Name and Address</Text>
+                  <Text color="black">: -</Text>
+                </Flex>
+                <Flex>
+                  <Text width="400px">
+                    Country of Origin / Manufacture / Assembly
+                  </Text>
+                  <Text color="black">: India</Text>
+                </Flex>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        </Box>
+      </Box>
+      <Box className="prod-bottom">
+        <Text className="head">Rating & Reviews</Text>
+        <Box className="rating">
+          <Flex className="circular">
+            <Box>
+              <CircularProgress
+                value={Product && Product[0].rating * 20}
+                color="rgb(255,140,78)"
+                size="120"
+                marginBottom={"10px"}
+                thickness="8px"
+              >
+                {" "}
+                <CircularProgressLabel
+                  color="rgb(255,140,78)"
+                  fontSize={"35px"}
+                >
+                  {Product && Product[0].rating}
+                </CircularProgressLabel>{" "}
+              </CircularProgress>
+              <Box paddingLeft={"10px"}>
+                <Star rating={Product && Product[0].rating} />
+              </Box>
+            </Box>
+            <Box w="40%">
+              <Flex color="green">
+                5{" "}
+                <Slider
+                  isReadOnly="true"
+                  defaultValue={20}
+                  colorScheme="green"
+                  marginLeft={"12px"}
+                >
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                </Slider>
+              </Flex>
+              <Flex color="green">
+                4{" "}
+                <Slider
+                  isReadOnly="true"
+                  defaultValue={30}
+                  colorScheme="green"
+                  marginLeft={"12px"}
+                >
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                </Slider>
+              </Flex>
+              <Flex color="green">
+                3{" "}
+                <Slider
+                  isReadOnly="true"
+                  defaultValue={70}
+                  colorScheme="green"
+                  marginLeft={"12px"}
+                >
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                </Slider>
+              </Flex>
+
+              <Flex color="red">
+                2{" "}
+                <Slider
+                  isReadOnly="true"
+                  defaultValue={30}
+                  colorScheme="red"
+                  marginLeft={"12px"}
+                >
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                </Slider>
+              </Flex>
+              <Flex color="red">
+                1{" "}
+                <Slider
+                  isReadOnly="true"
+                  defaultValue={10}
+                  colorScheme="red"
+                  marginLeft={"12px"}
+                >
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                </Slider>
+              </Flex>
+            </Box>
+          </Flex>
+          <Text fontSize={"20px"} margin={"12px"} color="gray">
+            1334 Ratings & 114 Reviews
+          </Text>
+        </Box>
+      </Box>
     </div>
   );
 };
