@@ -36,3 +36,150 @@
     transform: rotate(360deg);
   }
 }
+.sidebar{
+  width: 300px;
+  border-right: 1px solid gray;
+  height: 450px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+.form-input{
+  border-bottom: 1px solid gray;
+  outline: none;
+  width: 80px;
+  gap: 25px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+
+}
+.form-style{
+  width:400px;height:400px ; align-items:center;margin:auto;
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.input-fill{
+  border-bottom: 1px solid gray;
+  outline: none;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.payment-nav{
+  display: flex;
+  width: 100%;
+  height:70px;
+  border: 1px solid gray;
+  justify-content: space-between;
+  padding: 10px;
+}
+.payment-nav img{
+   margin-left: 70px;
+   width: 120px;
+  
+  
+   
+}.cart-nav{
+  display: flex;
+  width: 100%;
+  height:70px;
+  border: 1px solid gray;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; ;
+  
+}
+.cart-nav img{
+  margin-left: 90px;
+  width: 120px;
+  height: 150px;
+   margin-top: -50px;
+}
+.price{
+  text-decoration-line: line-through;
+}
+.flex{
+  display: flex;
+  gap: 10px;
+
+  margin: 20px;
+  border-bottom: 0.5px solid darkgray;
+}
+.right_div{
+   width: 320px;
+ 
+   height: 550px;
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px ;
+
+}
+.left_div{
+  width: 900px;
+
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px ;
+}
+.cart-img{
+  width: 100px;
+  height: 100px;
+  border: 1px solid gray;
+}
+.right{
+   margin-left: 200px;
+   text-align: right;
+}.coupon{
+  border-bottom: 1px solid darkgray;
+  text-align: left;
+  cursor: pointer;
+}
+.coupon-btn{
+  width: 170px;
+  padding: 10px;
+  font-size: larger;
+  border-radius: 5px;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(254,78,3,1) 0%, rgb(249, 134, 3) 40%, rgba(255,12,0,1) 100%);
+}
+
+.cashback{
+  width: 90%;
+  padding: 10px;
+  height: 150px;
+  border: 1px solid rgb(91, 145, 128);
+  background-color: rgb(222, 240, 235);
+  margin-top: 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.No{
+  border-bottom: 0.5px solid darkgray;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.save{
+  width: 90%;
+  margin-top: 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+  color: orange;
+  border: 1px solid orange;
+  padding: 10px;
+}
+
+.price_total{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.payment-btn{
+  width: 80%;
+  border-radius: 5px;
+  margin-left: 30px;
+  color: white;
+ 
+  background: linear-gradient(90deg, rgba(254,78,3,1) 0%, rgb(249, 134, 3) 40%, rgba(255,12,0,1) 100%);
+}

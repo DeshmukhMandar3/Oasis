@@ -1,15 +1,18 @@
+import "./App.css";
+
+import GeneralRoutes from "./AllRoutes/GeneralRoutes";
+import Payment from "./Pages/Payment/Payment";
+import Mycart from "./Pages/Mycart/Mycart";
+import Product from "./Pages/product/Product";
 
 
-import Home from "./components/Home/Home";
-import AllRoutes from "./components/Routes/Allroutes";
 
 
 function App() {
   return (
-    <div>
-   {/* <Home/> */}
-   <AllRoutes/>
-    </div>
+    <div className="App">
+  <GeneralRoutes />
+  </div>
   );
 }
 

@@ -1,0 +1,148 @@
+.wrapper {
+  background-color: rgb(238, 246, 250);
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.display_routes {
+  text-align: left;
+  padding: 15px 0px;
+  font-size: 14px;
+  color: rgb(117, 117, 117);
+}
+
+.category_wrapper {
+  background-color: white;
+  width: 25%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  text-align: left;
+  height: min-content;
+}
+
+.products_wrapper {
+  background-color: white;
+  width: 73%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding-top: 5px;
+}
+
+.flex_filter-products {
+  justify-content: space-between;
+}
+
+.Heading {
+  border-bottom: solid 0.5px rgb(202, 195, 195);
+  padding: 12px;
+  text-align: left;
+}
+
+.category_name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.subCategory {
+  color: rgb(117, 117, 117);
+  border: solid 0.5px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.sort {
+  /* border: solid red; */
+  width: 50%;
+  justify-content: space-evenly;
+  font-size: 13px;
+  color: rgb(117, 117, 117);
+  cursor: pointer;
+}
+
+.total-products {
+  font-size: 13px;
+  color: rgb(53, 53, 53);
+}
+
+.sort-cat:hover {
+  color: rgb(36, 163, 181);
+}
+
+.prod-sort {
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.sort-select {
+  color: rgb(36, 163, 181);
+  border-bottom: solid rgb(36, 163, 181);
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+.prev {
+  padding: 10px;
+  border: solid rgb(36, 163, 181);
+  border-top-left-radius: 5px;
+  color: rgb(36, 163, 181);
+  border-bottom-left-radius: 5px;
+  width: 150px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.next {
+  padding: 10px;
+  border: solid rgb(36, 163, 181);
+  color: rgb(36, 163, 181);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 150px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.page-button {
+  padding: 10px;
+  color: white;
+  background-color: rgb(36, 163, 181);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.prev:disabled {
+  cursor: not-allowed;
+  border: solid rgb(106, 151, 157);
+  color: rgb(106, 151, 157);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.filter-title {
+  font-size: 14px;
+}
+
+.filter-checkbox {
+  color: rgb(117, 117, 117);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.label {
+  margin-left: 5px;
+}
+
+.next:disabled {
+  cursor: not-allowed;
+  border: solid rgb(106, 151, 157);
+  color: rgb(106, 151, 157);
+  font-size: 14px;
+  font-weight: bold;
+}
