@@ -33,3 +33,13 @@ export function removeDataAPI(id:string):Promise<AxiosResponse>{
     .then(res=>res)
     .catch(err=>err)
 }
+
+export function getImageURL(form:FormData):Promise<AxiosResponse> {
+    const api_key = "1ceb2351b7fa35f99502de57b2d8e7d0";
+    const config:RawAxiosRequestConfig = {
+        method: 'post',
+        url: `https://api.imgbb.com/1/upload?key=${api_key}`,
+        data: form
+    }
+    return axios<ProductType>(config)
+}

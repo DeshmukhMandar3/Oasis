@@ -16,5 +16,6 @@ export enum PRODUCT_API {
     UPDATE_EDITED = "product/edited/set",
     UPDATE_SPEC = "product/edited/updateSpec",
     ADD_SPEC = "product/edited/addSpec",
-    REMOVE_SPEC = "product/edited/removeSpec"
+    REMOVE_SPEC = "product/edited/removeSpec",
+    CONVERT_IMG_FILE = "product/edited/fileToURL"
 }

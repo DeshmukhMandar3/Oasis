@@ -10,10 +10,7 @@ import { STATE_ACTIONS } from '../../Redux/product/product.actions'
 
 const EditDetails = ({data}:{data:ProductType}) => {
     const dispatch = useAppDispatch()
-    // const [category, setCategory] = React.useState<string>("")
-    // React.useEffect(()=>{
-    //     data && setCategory(data.product_category_tree[0])
-    // }, [])
+
   return (
     <Flex direction="column">
         <Table>
@@ -51,6 +48,10 @@ const EditDetails = ({data}:{data:ProductType}) => {
                     </Menu>
                 </Th>
                 <Td><Text>{data.product_category_tree[0]}</Text></Td>
+            </Tr>
+            <Tr>
+                <Th>Stock</Th>
+                <Td><CustomEditable field="stock" value={data.stock}/></Td>
             </Tr>
             </Tbody>
         </Table>

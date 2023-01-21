@@ -1,9 +1,13 @@
+import { Flex } from '@chakra-ui/react'
 import React from 'react'
+import Login from '../Components/Login/Login'
 
-const Login = () => {
+const LoginPage = () => {
   return (
-    <div>Login</div>
+    <Flex>
+      <Login/>
+    </Flex>
   )
 }
 
-export default Login
+export default LoginPage

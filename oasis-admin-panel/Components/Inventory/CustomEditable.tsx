@@ -13,17 +13,42 @@ interface propType extends ChakraProps {
 }
 
 function CustomEditable({field, value, multiline=false, ...rest}:propType) {
-    const [val, setVal] = React.useState<string>(String(value))
+    const [val, setVal] = React.useState(value)
     const dispatch = useAppDispatch()
-    const changeField = () => {
-      let newVal:string|number = val
-      if (field.includes('spec')) dispatch(STATE_ACTIONS.updateSPEC(field, newVal, +field[field.length-1]))
-      if (field===SortKeys.price||field===SortKeys.mrp||field===SortKeys.discount) newVal=Number(val)
-      dispatch(STATE_ACTIONS.updateEDIT({[field]:newVal}))
+    const changeField = (e:string|number) => {
+      if (field.includes('spec')) dispatch(STATE_ACTIONS.updateSPEC(field, e, +field[field.length-1]))
+      if (field===SortKeys.price||field===SortKeys.mrp||field===SortKeys.discount) e=Number(e)
+      dispatch(STATE_ACTIONS.updateEDIT({[field]:e}))
     }
+    let EditableComponent = () => <Editable
+    defaultValue={String(value)}
+    fontSize='sm'
+    isPreviewFocusable={false}
+    onSubmit={changeField}
+    {...rest}
+  >
+    <Flex gap="20px" align="center">
+        <EditablePreview />
+          {multiline?<Textarea resize="vertical" as={EditableTextarea}/>:<Input as={EditableInput} />}
+        <EditableControls />
+    </Flex>
+  </Editable>
     React.useEffect(()=>{
-      console.log(val)
-    })
+      EditableComponent = () => <Editable
+      defaultValue={String(value)}
+      fontSize='sm'
+      isPreviewFocusable={false}
+      onSubmit={changeField}
+      {...rest}
+      >
+      <Flex gap="20px" align="center">
+          <EditablePreview />
+            {multiline?<Textarea resize="vertical" as={EditableTextarea}/>:<Input as={EditableInput} />}
+          <EditableControls />
+      </Flex>
+    </Editable>
+    }, [value])
+
     function EditableControls() {
       const {
         isEditing,
@@ -45,19 +70,7 @@ function CustomEditable({field, value, multiline=false, ...rest}:propType) {
     }
   
     return (
-      <Editable
-        defaultValue={String(value)}
-        fontSize='sm'
-        isPreviewFocusable={false}
-        onSubmit={changeField}
-        {...rest}
-      >
-        <Flex gap="20px" align="center">
-            <EditablePreview />
-              {multiline?<Textarea value={val}  resize="vertical" as={EditableTextarea}/>:<Input value={val} onChange={e=>setVal(e.target.value)} as={EditableInput} />}
-            <EditableControls />
-        </Flex>
-      </Editable>
+      <EditableComponent/>
     )
   }
 

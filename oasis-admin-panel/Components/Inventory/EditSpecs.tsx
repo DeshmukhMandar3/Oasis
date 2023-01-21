@@ -4,14 +4,22 @@ import CustomEditable from '../../Components/Inventory/CustomEditable'
 import { RiDeleteBin5Fill } from 'react-icons/ri'
 import { BiAddToQueue } from 'react-icons/bi'
 import { specificationType } from '../../GlobalTypes/ProductType'
-import { useAppDispatch, useAppSelector } from '../../Redux/app.hooks'
+import { useAppDispatch } from '../../Redux/app.hooks'
 import {Flex, Table, Tbody, Text, Th, Td, Tr, IconButton, useColorModeValue, Thead, Button, Tfoot, Input } from '@chakra-ui/react'
-import { PRODUCT_ACTIONS, STATE_ACTIONS } from '../../Redux/product/product.actions'
+import { STATE_ACTIONS } from '../../Redux/product/product.actions'
 const EditSpecs = ({specs}:{specs:specificationType[]}) => {
+    console.log(specs)
     const dispatch = useAppDispatch()
+    const [KEY, setKey] = React.useState<string>("")
+    const [VALUE, setValue] = React.useState<string>("")
 
     const handleDelete = (id:number) => {
         dispatch(STATE_ACTIONS.removeSPEC(id))
+    }
+    const handleAdd = () => {
+        dispatch(STATE_ACTIONS.addSPEC(KEY, VALUE))
+        setKey("")
+        setValue("")
     }
     const teal = useColorModeValue('brand.200', 'brand.100')
 
@@ -37,9 +45,9 @@ const EditSpecs = ({specs}:{specs:specificationType[]}) => {
                 </Tbody>
                 <Tfoot>
                     <Tr>
-                        <Td><Input/></Td>
-                        <Td><Input/></Td>
-                        <Td><IconButton aria-label='add spec' icon={<BiAddToQueue/>} /></Td>
+                        <Td><Input value={KEY} onChange={e=>setKey(e.target.value)}/></Td>
+                        <Td><Input value={VALUE} onChange={e=>setValue(e.target.value)}/></Td>
+                        <Td><IconButton onClick={handleAdd} aria-label='add spec' icon={<BiAddToQueue/>} /></Td>
                     </Tr>
                 </Tfoot>
             </Table>

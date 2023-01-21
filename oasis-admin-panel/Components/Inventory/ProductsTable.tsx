@@ -58,7 +58,7 @@ const ProductsTable = ({data, count, params}:PropsType) => {
               </Th>
               <Th/>
               <Th>
-                <IconButton onClick={reset} color={teal} bg="transparent" aria-label='reset' size='sm' icon={<GrPowerReset/>}/>
+                <IconButton onClick={reset} colorScheme='teal' aria-label='reset' size='xs' icon={<GrPowerReset/>}/>
               </Th>
             </Tr>
           </Thead>

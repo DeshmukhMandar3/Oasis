@@ -8,17 +8,20 @@ import theme from "../Theme/theme"
 import VNavbar from "../Components/Navbar/VNavbar"
 import HNavbar from "../Components/Navbar/HNavbar"
 import store from "../Redux/store"
+import AuthContextProvider from '../Contexts/AuthContext'
 
 export default function App({ Component, pageProps }: AppProps) {
   return <>
-    <Provider store={store}>
-      <ChakraProvider theme={theme}>
-        <HNavbar/>
-        <Flex p="2em">
-          <VNavbar/>
-          <Component {...pageProps} />
-        </Flex>
-      </ChakraProvider>
-    </Provider>
+    <AuthContextProvider>
+      <Provider store={store}>
+        <ChakraProvider theme={theme}>
+          <HNavbar/>
+          <Flex p="2em">
+            <VNavbar/>
+            <Component {...pageProps} />
+          </Flex>
+        </ChakraProvider>
+      </Provider>
+    </AuthContextProvider>
   </>
 }
