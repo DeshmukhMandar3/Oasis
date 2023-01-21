@@ -360,3 +360,5 @@ const Footer=()=>{
 }
 
 export default Footer
+
+// new file added
