@@ -1,10 +1,14 @@
 import React from "react";
 import "./Navbar.css";
 import logoimg from "../sources/prologo.jpg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import Logout from "../Authentication/Logout";
+import { Authcontext } from "../../AllContexts/AuthContext";
+import { useContext } from "react";
+import {GiCrossMark} from "react-icons/gi"
+
 
 // search functionality function
 export const fetchDataBySearch = async (category, page) => {
@@ -18,10 +22,22 @@ export const fetchDataBySearch = async (category, page) => {
 // Products?q=${query}
 
 const Navbar = () => {
+  const { auth} = useContext(Authcontext);
+  console.log(auth)
   // search functionality state manage and function call
   const [category, setQuery] = useState("");
   const [data, setdata] = useState([]);
   const [page, setPage] = useState(1);
+  const cartfun=()=>{
+    if(auth)
+    {
+     window.location.href="/Mycart"
+     }
+    else{
+      alert("first login")
+    }
+  }
+  // const [toggle, settoggle]= useState(false)
   useEffect(() => {
     try {
       if (category !== "") {
@@ -77,7 +93,7 @@ const Navbar = () => {
         {data.map((el) => {
           return (
             <div className="search_div_box_start_nav">
-              <div className="search_div_box_start_nav_second_div">
+              <div className="search_div_box_start_nav_second_div" >
                 <NavLink
                   className="search_div_functionality_nav"
                   to={`/AllProducts/${el.id}`}
@@ -130,11 +146,16 @@ const Navbar = () => {
             <li>
               <i class="far fa-heart"></i>
             </li>
+            
             <li id="showcart">
-              <a href="#">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </a>
-            </li>
+            
+              
+             
+              <i class="fa-solid fa-cart-shopping" onClick={cartfun}></i>
+         
+            
+            
+</li>
            
 
             <li id="navbar_signin_section_first">
