@@ -80,7 +80,7 @@ const Navbar = () => {
               <div className="search_div_box_start_nav_second_div">
                 <NavLink
                   className="search_div_functionality_nav"
-                  to={`/ProductDetails/${el.id}`}
+                  to={`/AllProducts/${el.id}`}
                   key={el.id}
                 >
                   {/* <img src={el.product_url} alt="products" /> */}
