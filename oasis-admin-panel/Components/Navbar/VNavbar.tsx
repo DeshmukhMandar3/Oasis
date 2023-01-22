@@ -5,8 +5,9 @@ import { useRouter } from 'next/router'
 
 const Navbar = () => {
   const router = useRouter()
+  let hide = router.pathname==='/login'
   return (
-    <Box display={{base:"none", lg:"block"}}>
+    <Box display={{base:"none", lg:hide?"none":"block"}}>
       <VStack color="brand.200" w="200px">
         {LINKS.map((link, i)=>
         <Button key={i} variant="outline" w="80%" isActive={router.pathname===link.link} onClick={()=>router.push(link.link)}>

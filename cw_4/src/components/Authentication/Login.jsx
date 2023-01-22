@@ -163,14 +163,6 @@ const Login = () => {
           });
           setlading(true);
         } else {
-          toast({
-            title: "Login Successful",
-            description: "",
-            status: "success",
-            duration: 3000,
-            isClosable: true,
-            position: "top",
-          });
           setbackpage(false);
 
           setlading(true);
@@ -230,12 +222,12 @@ const Login = () => {
   const Verifyopt = () => {
     if (otp === verifyotp) {
       toast({
-        title: "Enjoy your shoping",
+        title: "Login Successful",
         description: ``,
         status: "success",
         duration: 9000,
         isClosable: true,
-        position: "top-left",
+        position: "top",
       });
       usedatacheck();
     } else {
@@ -330,7 +322,9 @@ const Login = () => {
   if (!auth) {
     return (
       <>
-        <Button onClick={onOpen}>Login</Button>
+        <Button onClick={onOpen} margin="5px">
+          User Login / Register
+        </Button>
 
         <Modal
           blockScrollOnMount={false}

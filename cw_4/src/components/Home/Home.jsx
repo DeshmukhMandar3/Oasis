@@ -17,7 +17,7 @@ import Footer from "../Footer/Footer";
 
 const Home=()=>{
   const handleclickicon=(direction)=>{
-  const slider=document.getElementsByClassName('home_gadgets_store')[0];
+  const slider=document.getElementsByClassName('home_gadgets_store_gadget')[0];
   if(direction === "left")
   {
     slider.scrollBy(-400,0)
