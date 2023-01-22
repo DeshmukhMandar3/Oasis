@@ -1,8 +1,10 @@
 
 import React from "react";
+import Gototop from "../topscroller/Gototop";
 import "./Footer.css"
 
 const Footer=()=>{
+    
     return (
         <>
 <footer>
@@ -355,6 +357,8 @@ const Footer=()=>{
     </div>
 
 </footer>
+
+<Gototop/>
         </>
     )
 }

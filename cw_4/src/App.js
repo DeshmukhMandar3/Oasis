@@ -10,18 +10,20 @@ import Success from "./Pages/Payment/Success";
 
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
 
 function App() {
   return (
     <div className="App">
-   
-      <Success/>
-      <Mycart/>
-        <Payment/>
+      <Navbar/>
+      {/* <Success/> */}
+      {/* <Mycart/>
+        <Payment/> */}
       {/* <GeneralRoutes /> */}
-    
-
       <GeneralRoutes />
+      <Footer/>
+      
     </div>
   );
 }
