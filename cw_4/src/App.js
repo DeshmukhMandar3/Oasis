@@ -8,10 +8,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Success/> */}
-      {/* <Mycart/>
-        <Payment/> */}
-      {/* <GeneralRoutes /> */}
       <GeneralRoutes />
       <Footer />
     </div>

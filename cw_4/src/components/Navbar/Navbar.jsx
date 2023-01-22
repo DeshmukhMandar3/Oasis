@@ -40,7 +40,6 @@ const Navbar = () => {
       {/* navbar 1st part */}
 
       <div className="navbar_1st_part_div">
-        <Logout />
         <div className="navbar_app_part">
           <ul>
             <li>Sell With Us</li>

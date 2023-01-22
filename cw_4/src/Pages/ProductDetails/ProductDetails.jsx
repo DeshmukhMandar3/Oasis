@@ -43,6 +43,8 @@ const ProductDetails = () => {
   const [cart, setCart] = React.useState([]);
   //const state for getcart trigger
   const [toggle, setToggle] = React.useState(false);
+  // wishlist
+  const [wishList, setWishList] = React.useState([]);
 
   //Auth context
   const userData = useContext(Authcontext);
@@ -60,6 +62,14 @@ const ProductDetails = () => {
       setCart(data);
       setisLoading(false);
     }
+    async function getWishList() {
+      setisLoading(true);
+      let res = await fetch("https://backend-cw-4.onrender.com/wishlist");
+      let data = await res.json();
+      setWishList(data);
+      setisLoading(false);
+    }
+    getWishList();
     getCart();
   }, [toggle]);
 
@@ -68,6 +78,7 @@ const ProductDetails = () => {
     title: `Product Added to the cart`,
     status: "success",
     isClosable: true,
+    position: "top",
   });
   async function handleAddToCart() {
     let count = 1;
@@ -132,6 +143,43 @@ const ProductDetails = () => {
     getDetails();
   }, []);
 
+  //Add to wishList
+  async function handleAddToWishlist() {
+    let flag = false;
+    wishList.map((el) => {
+      if (el.pid === Product[0].id && userMail === el.email) {
+        toast({
+          title: "Item already exists in the wishlist",
+          status: "info",
+          duration: 9000,
+          isClosable: true,
+        });
+        flag = true;
+      }
+    });
+    if (!flag) {
+      let id = Date.now();
+      let pid = Product[0].id;
+      let email = userMail;
+      let details = {
+        id,
+        pid,
+        email,
+      };
+      let res = axios.post(
+        "https://backend-cw-4.onrender.com/wishlist",
+        details
+      );
+      console.log(res);
+      setToggle(!toggle);
+      toast({
+        title: "Product Added to the wishlist",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+  }
   return (
     <div className="wrapper">
       <Box className="breadcrump">
@@ -172,7 +220,7 @@ const ProductDetails = () => {
         <>
           <Flex className="details-top">
             <Box className="image-box">
-              <Box className="wishlist">
+              <Box className="wishlist" onClick={handleAddToWishlist}>
                 <span class="material-symbols-rounded">favorite</span>
               </Box>
               <Box class="display-img">

@@ -45,10 +45,6 @@ const AllProducts = () => {
   const [Discount, setDiscount] = React.useState([0, 100]);
   const [Rating, setRating] = React.useState([0, 5]);
 
-  //Auth context
-  const userData = useContext(Authcontext);
-  console.log(userData.userdata.email);
-
   //fetching data from server
   const { category } = useParams();
   React.useEffect(() => {
