@@ -2,8 +2,11 @@ import axios, { AxiosError } from 'axios'
 import { AxiosResponse, RawAxiosRequestConfig } from 'axios'
 import { ProductType } from '../../GlobalTypes/ProductType'
 
-const BASE_URL = `http://localhost:8080/Admin`
-const getURL = (id:string) => `http://localhost:8080/Admin/${id}`
+// const BASE_URL = `http://localhost:8080/Admin`
+// const getURL = (id:string) => `http://localhost:8080/Admin/${id}`
+
+const BASE_URL = `https://backend-cw-4.onrender.com/Admin`
+const getURL = (id:string) => `https://backend-cw-4.onrender.com/Admin/${id}`
 
 interface ResponseType {
     email:string,
