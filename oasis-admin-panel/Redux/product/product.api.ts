@@ -1,8 +1,10 @@
 import axios, { AxiosError } from 'axios'
 import { AxiosResponse, RawAxiosRequestConfig } from 'axios'
 import { ProductType } from '../../GlobalTypes/ProductType'
-
-const getURL = (id:string) => `http://localhost:8080/Products/${id}`
+//const BASE_URL = ``
+const BASE_URL = `https://backend-cw-4.onrender.com/Products/`
+// const getURL = (id:string) => `http://localhost:8080/Products/${id}`
+const getURL = (id:string) => `https://backend-cw-4.onrender.com/Products/${id}`
 
 
 export function getSingleDataAPI(id:string):Promise<AxiosResponse> {

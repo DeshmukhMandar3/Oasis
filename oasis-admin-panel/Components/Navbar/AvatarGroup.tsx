@@ -1,18 +1,21 @@
 import React from 'react'
 import { Flex, Avatar, useColorModeValue, Text, ChakraProps } from '@chakra-ui/react'
+import { useAppSelector } from '../../Redux/app.hooks'
 
 interface proptype extends ChakraProps {
-  name: string,
+  name?: string,
   src?: string,
   // [x:string]: any
 }
 
-const AvatarGroup = ({name, src, ...rest}:proptype):JSX.Element => {
+const AvatarGroup = ({...rest}:proptype):JSX.Element => {
+  const {authData} = useAppSelector(store=>store.Auth)
+  if (!authData) return 
   return (
     <Flex align="center" {...rest}>
-        <Avatar name={name} bg="brand.100" src={src}/>
+        <Avatar name={authData.name} bg="brand.100" src={authData.image}/>
         <Flex direction="column" justify="center">
-            <Text color={useColorModeValue("gray.700", "white")}>{name}</Text>
+            <Text color={useColorModeValue("gray.700", "white")}>{authData.name}</Text>
             <Text color="brand.200">Admin</Text>
         </Flex>
     </Flex>
