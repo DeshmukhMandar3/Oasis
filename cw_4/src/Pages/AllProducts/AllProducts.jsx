@@ -13,10 +13,14 @@ import {
   AccordionPanel,
   AccordionIcon,
   Checkbox,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
 } from "@chakra-ui/react";
 import "./AllProducts.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import { useParams } from "react-router-dom";
+import { ChevronRightIcon } from "@chakra-ui/icons";
+import { Link, useParams } from "react-router-dom";
 
 const AllProducts = () => {
   // Styling purpose
@@ -76,9 +80,17 @@ const AllProducts = () => {
       <>
         <Box className="display_routes">
           {/* To be replaced by props later */}
-          <Text>
-            Home {" > "} {category}
-          </Text>
+          <Breadcrumb
+            spacing="8px"
+            separator={<ChevronRightIcon color="gray.500" />}
+          >
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbLink href="#">{category}</BreadcrumbLink>
+          </Breadcrumb>
         </Box>
         <Flex className="flex_filter-products">
           <Box className="category_wrapper">

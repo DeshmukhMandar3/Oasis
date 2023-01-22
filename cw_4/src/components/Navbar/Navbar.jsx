@@ -4,6 +4,7 @@ import logoimg from "../sources/prologo.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import Logout from "../Authentication/Logout";
 
 // search functionality function
 export const fetchDataBySearch = async (query, page) => {
@@ -37,6 +38,7 @@ const Navbar = () => {
   return (
     <>
       {/* navbar 1st part */}
+
       <div className="navbar_1st_part_div">
         <div className="navbar_app_part">
           <ul>
@@ -92,6 +94,7 @@ const Navbar = () => {
  {/* search functionality end*/}
 
         {/* address wishlist notification cart signin part */}
+        <Logout />
         <div className="navbar_address_section">
           <ul>
             <li>
@@ -110,7 +113,6 @@ const Navbar = () => {
             </li>
 
             <li id="navbar_signin_section_first">
-              <a href="#">Sign In</a>
               <div class="navbar_hover_content_first">
                 <div id="navbar_userHeading_part">
                   <i class="fa-regular fa-user"></i>
@@ -253,26 +255,41 @@ const Navbar = () => {
         <Link to="/AllProducts/baby care" className="navbar_third_section_link">
           Baby Care
         </Link>
-        <Link to="/foodandbeverage" className="navbar_third_section_link">
-          Food and Beverage
+        <Link to="/AllProducts/Clothing" className="navbar_third_section_link">
+          Clothing
         </Link>
-        <Link to="/" className="navbar_third_section_link">
+        <Link
+          to="/AllProducts/Home Cleaning"
+          className="navbar_third_section_link"
+        >
           Home Cleaning
         </Link>
-        <Link to="/" className="navbar_third_section_link">
-          Personal Hygiene
+        <Link to="/AllProducts/Home" className="navbar_third_section_link">
+          Home Accessories
         </Link>
-        <Link to="/" className="navbar_third_section_link">
+        <Link
+          to="/AllProducts/Kitchen & Dining"
+          className="navbar_third_section_link"
+        >
           Kitchen & Dining
         </Link>
-        <Link to="/" className="navbar_third_section_link">
+        <Link
+          to="/AllProducts/Mobile Accessories"
+          className="navbar_third_section_link"
+        >
           Mobile Accessories
         </Link>
-        <Link to="/" className="navbar_third_section_link">
-          Refurbished Mobiles
+        <Link
+          to="/AllProducts/Automotive"
+          className="navbar_third_section_link"
+        >
+          Automotive
         </Link>
-        <Link to="/" className="navbar_third_section_link">
-          Women Care
+        <Link
+          to="/AllProducts/Sports & Fitness"
+          className="navbar_third_section_link"
+        >
+          Sports & Fitness
         </Link>
       </div>
     </>
