@@ -162,24 +162,24 @@ const Home=()=>{
 
 {/* gadgets store div */}
     <h1>Your Gadgets Store</h1>
-    <div className="item_home_div_all">
+    <div className="item_home_div_all_gadget">
       {/* btn lfet */}
       <div className="home_arrow_btn home_left_icon" onClick={()=>handleclickicon('left')}>
         <img src={lefticon} alt="left" />
       </div>
       
-  <div className="home_gadgets_store">
+  <div className="home_gadgets_store_gadget">
   {
     gadget_data.map((el,ind)=>{
      return <div className="home_gadgets_childdiv">
         <img src={el.img} alt="" />
         <p className="home_nameofpro_part">{el.name}</p>
-        <div className="home_price_div">
+        <div className="home_price_div_gadget">
           <p>{`₹${el.p1}`}</p>
          
           <p>{`₹${el.p3}`}</p>
         </div>
-        <p className="home_discount_price_divplus">{el.dis}</p>
+        <p className="home_discount_price_divplus_gadget">{el.dis}</p>
       </div>
     })
   }
@@ -240,7 +240,7 @@ const Home=()=>{
         <img src={el.img} alt="" />
         <p className="home_nameofpro_part">{el.name}</p>
         <div className="home_price_div home_deals_price_p">
-          <p>{`₹${el.p2}`}</p>
+          <p></p>
          <p>{`₹${el.p3}`}</p>
         </div>
         <p className="home_discount_price_divplus home_deals_price_plus">{el.dis}</p>

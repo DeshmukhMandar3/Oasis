@@ -26,7 +26,7 @@ footer {
     display: block;
     font-size: 16px;
     font-weight: 500;
-    margin-left: 15%;
+    /* margin-left: 13%; */
 }
 
 .footer_first_section_start>ul>li{
@@ -35,6 +35,8 @@ footer {
     padding: 4px 0;
     color: #757575;
     font-size: 14px;
+    /* text-align: left;
+    margin-left: 80px; */
 }
 
 .footer_first_section_start>ul>li:hover {
@@ -68,11 +70,15 @@ footer {
     color: #212121;
     font-weight: 500;
     margin: 30px 0 20px 0;
+    text-align: left;
+}
+.social_connection_footer_section>h3{
+    margin-left: 15px;
 }
 
 h3+ul {
     list-style: none;
-    margin-left: -6%;
+    /* margin-left: -6%; */
 }
 
 .social_connection_footer_section>ul>li {
@@ -116,13 +122,15 @@ h3+ul {
     color: #212121;
     font-weight: 500;
     margin: 32px 0 20px 0;
+    text-align: left;
 }
 
 .footer_category_div_start>ul {
     display: inline-block;
     width: 100%;
     margin-bottom: 7px;
-    margin-left: -3%;
+    /* margin-left: -3%; */
+
 }
 
 .footer_category_div_start>ul>li {
@@ -132,6 +140,7 @@ h3+ul {
     line-height: 2px;
     padding: 0 3px;
     font-size: 14px;
+    line-height: 15px;
 }
 
 .footer_category_div_start>ul>li:hover {
@@ -157,12 +166,15 @@ h3+ul {
     color: #757575;
     line-height: 1.71em;
     background-color: #eff7fa;
+    text-align: left;
 }
 
 .footer_forth_section_start .footer_category_div_start h1 {
     font-size: 16px;
     font-weight: 500;
     color: #212121;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .footer_forth_section_start .footer_category_div_start h2 {
@@ -172,6 +184,7 @@ h3+ul {
     color: #212121;
     margin-bottom: 0.2%;
     line-height: 24px;
+    text-align: left;
 }
 
 /* footer fifth part */

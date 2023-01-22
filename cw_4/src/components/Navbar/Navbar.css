@@ -102,15 +102,17 @@
    overflow-y:"scroll";
    background-color: white;
    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+   /* margin-top: 70px; */
   }
-  .search_div_box_start_nav_second_div{
+  /* .search_div_box_start_nav_second_div{
     height: 100px;
     width: 100%;
-    /* border: 1px solid red; */
-  }
+    border: 1px solid red;
+  } */
 .search_div_functionality_nav{
     text-decoration: none;
     color: black;
+    /* text-align: left; */
     }
 /* address wishlist notification cart signin part*/
 
@@ -376,4 +378,10 @@
 }
 .navbar_third_section_link:hover{
     color: #24a3b5;
+}
+
+/* new */
+.navbar_logout_btn_new{
+margin-top: -100px;
+margin-left: 40px;
 }

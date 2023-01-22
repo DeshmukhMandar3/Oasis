@@ -12,6 +12,7 @@ import Success from "./Pages/Payment/Success";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
       {/* <GeneralRoutes /> */}
       <GeneralRoutes />
       <Footer/>
+      
     </div>
   );
 }
