@@ -82,18 +82,38 @@ const Navbar = () => {
                 >
                   {/* <img src={el.product_url} alt="products" /> */}
                   <h2>{el.product_name}</h2>
-                  <p>{el.discounted_price}</p>
+                  <p>{`Price:${el.discounted_price}`}</p>
                 </NavLink>
               </div>
-              <button disabled={page <= 1} onClick={() => setPage(page - 1)}>
+              <button
+                disabled={page <= 1}
+                onClick={() => setPage(page - 1)}
+                style={{
+                  border: "1px solid #24a3b5",
+                  width: "50px",
+                  background: "#24a3b5",
+                  color: "white",
+                }}
+              >
                 Prev
               </button>
-              <button onClick={() => setPage(page + 1)}>Next</button>
+              <button
+                onClick={() => setPage(page + 1)}
+                style={{
+                  border: "1px solid #24a3b5",
+                  marginLeft: "10px",
+                  width: "50px",
+                  background: "#24a3b5",
+                  color: "white",
+                }}
+              >
+                Next
+              </button>
             </div>
           );
         })}
-
         {/* search functionality end*/}
+
         {/* address wishlist notification cart signin part */}
 
         <div className="navbar_address_section">
@@ -165,6 +185,10 @@ const Navbar = () => {
               </div>
             </li>
           </ul>
+        </div>
+        <div className="navbar_logout_btn_new">
+          {" "}
+          <Logout />
         </div>
       </div>
       {/* navbar 1st part completed */}

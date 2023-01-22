@@ -57,13 +57,10 @@ export async function getDataAPI({page, limit, pid, name, category, sort, order}
     return {data, count:headers['x-total-count']?+headers['x-total-count']:0}
 }
 
-export async function getSingleDataAPI(id:number):Promise<ProductType> {
+export async function getSingleDataAPI(id:string):Promise<ProductType> {
     const config:RawAxiosRequestConfig = {
         method: 'get',
-        url: BASE_URL,
-        params: {
-            id,
-        }
+        url: getURL(id),
     }
     const {data} = await axios<ProductType>(config)
     return data
