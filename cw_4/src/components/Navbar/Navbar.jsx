@@ -56,7 +56,7 @@ const Navbar = () => {
         {/* website logo */}
 
         <div className="navbar_website_logo">
-          <a href="#">
+          <a href="/">
             <img src={logoimg} alt="logo" />
           </a>
         </div>
@@ -191,10 +191,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar_logout_btn_new">
+        {/* <div className="navbar_logout_btn_new">
           {" "}
           <Logout />
-        </div>
+        </div> */}
 
       </div>
       {/* navbar 1st part completed */}
