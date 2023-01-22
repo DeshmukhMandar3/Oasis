@@ -57,12 +57,11 @@ const Navbar = () => {
       {/* navbar 1st part */}
 
       <div className="navbar_1st_part_div">
-      
         <div className="navbar_app_part">
-       
-
           <ul>
-          <li><Logout /></li>
+            <li>
+              <Logout />
+            </li>
             <li>Sell With Us</li>
             <li>Call Us</li>
             <li>Download App</li>
@@ -148,6 +147,7 @@ const Navbar = () => {
             </li>
             
             <li id="showcart">
+
             
               
              
@@ -155,8 +155,9 @@ const Navbar = () => {
          
             
             
-</li>
+              </li>
            
+
 
             <li id="navbar_signin_section_first">
               <div class="navbar_hover_content_first">
@@ -216,7 +217,6 @@ const Navbar = () => {
           {" "}
           <Logout />
         </div> */}
-
       </div>
       {/* navbar 1st part completed */}
 
