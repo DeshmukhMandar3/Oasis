@@ -1,0 +1,3 @@
+ideas:
+-add a input for discount percent beside the editable for discounted_price, which auto calculates the Price
+-add error indication when user tries entering a url without removing the selected file or viceversa
