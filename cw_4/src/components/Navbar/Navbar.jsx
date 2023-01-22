@@ -7,25 +7,26 @@ import { useState } from "react";
 import Logout from "../Authentication/Logout";
 
 // search functionality function
-export const fetchDataBySearch = async (query, page) => {
-  console.log("query 11", query);
+export const fetchDataBySearch = async (category, page) => {
+  // console.log("query 11", query);
   let res = await fetch(
-    `https://backend-cw-4.onrender.com/Products?q=${query}&_page=${page}&_limit=10`
+    `https://backend-cw-4.onrender.com/Products?product_category_tree_like=${category}&_page=${page}&_limit=10`
   );
   res = await res.json();
   return res;
 };
+// Products?q=${query}
 
 const Navbar = () => {
   // search functionality state manage and function call
-  const [query, setQuery] = useState("");
+  const [category, setQuery] = useState("");
   const [data, setdata] = useState([]);
   const [page, setPage] = useState(1);
   useEffect(() => {
     try {
-      if (query !== "") {
-        console.log("query 27", query);
-        fetchDataBySearch(query, page).then((res) => {
+      if (category !== "") {
+        // console.log("query 27", query);
+        fetchDataBySearch(category, page).then((res) => {
           console.log(res);
           setdata(res);
         });
@@ -33,14 +34,14 @@ const Navbar = () => {
     } catch (error) {
       console.log("error:", error);
     }
-  }, [query, page]);
+  }, [category, page]);
 
   return (
     <>
       {/* navbar 1st part */}
 
       <div className="navbar_1st_part_div">
-        <Logout />
+      
         <div className="navbar_app_part">
        
 
@@ -55,7 +56,7 @@ const Navbar = () => {
         {/* website logo */}
 
         <div className="navbar_website_logo">
-          <a href="#">
+          <a href="/">
             <img src={logoimg} alt="logo" />
           </a>
         </div>
@@ -79,7 +80,7 @@ const Navbar = () => {
               <div className="search_div_box_start_nav_second_div">
                 <NavLink
                   className="search_div_functionality_nav"
-                  to={`/ProductDetails/${el.id}`}
+                  to={`/AllProducts/${el.id}`}
                   key={el.id}
                 >
                   {/* <img src={el.product_url} alt="products" /> */}
@@ -190,10 +191,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar_logout_btn_new">
+        {/* <div className="navbar_logout_btn_new">
           {" "}
           <Logout />
-        </div>
+        </div> */}
 
       </div>
       {/* navbar 1st part completed */}

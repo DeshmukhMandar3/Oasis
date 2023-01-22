@@ -1,18 +1,26 @@
 import axios, { AxiosError } from 'axios'
 import { AxiosResponse, RawAxiosRequestConfig } from 'axios'
 import { ProductType } from '../../GlobalTypes/ProductType'
-//const BASE_URL = ``
-const BASE_URL = `https://backend-cw-4.onrender.com/Products/`
-// const getURL = (id:string) => `http://localhost:8080/Products/${id}`
-const getURL = (id:string) => `https://backend-cw-4.onrender.com/Products/${id}`
+
+const BASE_URL = `http://localhost:8080/Admin`
+const getURL = (id:string) => `http://localhost:8080/Admin/${id}`
+
+interface ResponseType {
+    email:string,
+    password:string
+}
 
 
-export function getSingleDataAPI(id:string):Promise<AxiosResponse> {
+export function getAdmin(email:string, password:string):Promise<AxiosResponse> {
     const config:RawAxiosRequestConfig = {
         method: 'get',
-        url: getURL(id),
+        url: BASE_URL,
+        params:{
+            email,
+            password,
+        }
     }
-    return axios<ProductType>(config)
+    return axios<ResponseType[]>(config)
 }
 
 export function patchDataAPI(changes:ProductType, id:string):Promise<AxiosResponse>{ //need to change key to id

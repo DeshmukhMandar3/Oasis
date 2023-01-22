@@ -2,9 +2,11 @@ import axios from 'axios'
 import { AxiosResponse, RawAxiosRequestConfig } from 'axios'
 import { ProductType } from '../../GlobalTypes/ProductType'
 
-const BASE_URL = `http://localhost:8080/Products`
+const BASE_URL = `https://backend-cw-4.onrender.com/Products/`
+// const BASE_URL = `http://localhost:8080/Products/`
 
-const getURL = (id:string) => `http://localhost:8080/Products/${id}`
+const getURL = (id:string) => `https://backend-cw-4.onrender.com/Products/${id}`
+// const getURL = (id:string) => `http://localhost:8080/Products/${id}`
 
 export interface ParamsType {
     page: number,
