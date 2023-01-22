@@ -3,10 +3,12 @@ import { legacy_createStore, combineReducers, compose, applyMiddleware } from 'r
 import thunk from 'redux-thunk'
 import productsReducer from './products/products.reducer'
 import productReducer from './product/product.reducer'
+import authReducer from './auth/auth.reducer'
 
 const rootReducer = combineReducers({
     Products: productsReducer,
-    Product: productReducer
+    Product: productReducer,
+    Auth: authReducer,
 })
 // ---Redux DevTools
 let composeEnhancers = compose;

@@ -16,9 +16,10 @@ import { useRouter } from 'next/router'
 import {LINKS} from './links'
 import AvatarGroup from './AvatarGroup'
 import ToggleTheme from './ToggleTheme'
-
+import { useAppDispatch } from '../../Redux/app.hooks'
+import { AUTH_ACTIONS } from '../../Redux/auth/auth.actions'
 export default function NavDrawer({isOpen, onClose, btnRef}) {
-    
+    const dispatch = useAppDispatch()
     const router = useRouter()
 
     return (
@@ -57,7 +58,10 @@ export default function NavDrawer({isOpen, onClose, btnRef}) {
             </DrawerBody>
   
             <DrawerFooter>
-                <ToggleTheme/>
+                <Flex gap="20px">
+                  <Button variant="outline" onClick={()=>dispatch(AUTH_ACTIONS.logout())}>Log Out</Button>
+                  <ToggleTheme/>
+                </Flex>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

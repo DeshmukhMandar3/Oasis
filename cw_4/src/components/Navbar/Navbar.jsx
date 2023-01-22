@@ -41,6 +41,7 @@ const Navbar = () => {
       {/* navbar 1st part */}
 
       <div className="navbar_1st_part_div">
+        <Logout />
         <div className="navbar_app_part">
        
 
@@ -87,17 +88,37 @@ const Navbar = () => {
                   <p>{`Price:${el.discounted_price}`}</p>
                 </NavLink>
               </div>
-              <button disabled={page <= 1} onClick={() => setPage(page - 1)} style={{border:"1px solid #24a3b5", width:"50px", background:"#24a3b5", color:"white"}}>
+              <button
+                disabled={page <= 1}
+                onClick={() => setPage(page - 1)}
+                style={{
+                  border: "1px solid #24a3b5",
+                  width: "50px",
+                  background: "#24a3b5",
+                  color: "white",
+                }}
+              >
                 Prev
               </button>
-              <button onClick={() => setPage(page + 1)} style={{border:"1px solid #24a3b5", marginLeft:"10px", width:"50px", background:"#24a3b5", color:"white"}}>Next</button>
+              <button
+                onClick={() => setPage(page + 1)}
+                style={{
+                  border: "1px solid #24a3b5",
+                  marginLeft: "10px",
+                  width: "50px",
+                  background: "#24a3b5",
+                  color: "white",
+                }}
+              >
+                Next
+              </button>
             </div>
           );
         })}
- {/* search functionality end*/}
+        {/* search functionality end*/}
 
         {/* address wishlist notification cart signin part */}
-        
+
         <div className="navbar_address_section">
           <ul>
             <li>
@@ -168,10 +189,13 @@ const Navbar = () => {
               </div>
             </li>
           </ul>
-          
         </div>
-        <div className="navbar_logout_btn_new"> </div>
-       
+
+        <div className="navbar_logout_btn_new">
+          {" "}
+          <Logout />
+        </div>
+
       </div>
       {/* navbar 1st part completed */}
 
