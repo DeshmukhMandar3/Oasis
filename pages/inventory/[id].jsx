@@ -25,6 +25,7 @@ const ProductPage = () => {
     }
     React.useEffect(() => {
         if (router && router.query) {
+
          dispatch(PRODUCT_ACTIONS.getData(router.query.id))
          dispatch(STATE_ACTIONS.setID(router.query.id))
         }

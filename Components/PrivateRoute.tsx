@@ -6,14 +6,13 @@ const PrivateRoute = ({children}:{children:any}) => {
     const {isAuth} = useAppSelector(store=>store.Auth)
     React.useEffect(()=>{
         // const ls_id = localStorage.getItem('adminID-oasis')
-        if (router.pathname==="/login") return
-        if (!isAuth){
+        if (!isAuth && router.pathname!=="/login"){
             if (router) router.push('/login')
         }
-    }, [router.pathname])
+    }, [router.pathname, isAuth])
     React.useEffect(()=>{
         if (isAuth){
-            router.push('/')
+            router.back()
         } else {
             router.push('/login')
         }

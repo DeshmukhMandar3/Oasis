@@ -11,7 +11,6 @@ const format = (n:number|string|undefined):string => {
     n = n || 0
     return Number(n).toFixed(2)
 }
-
 const ProductRow = (prod:ProductType) => {
   const teal = useColorModeValue('brand.200', 'brand.100')
   const dispatch = useAppDispatch()

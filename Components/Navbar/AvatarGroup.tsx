@@ -9,13 +9,14 @@ interface proptype extends ChakraProps {
 }
 
 const AvatarGroup = ({...rest}:proptype):JSX.Element => {
+  const color = useColorModeValue("gray.700", "white")
   const {authData} = useAppSelector(store=>store.Auth)
   if (!authData) return 
   return (
     <Flex align="center" {...rest}>
         <Avatar name={authData.name} bg="brand.100" src={authData.image}/>
         <Flex direction="column" justify="center">
-            <Text color={useColorModeValue("gray.700", "white")}>{authData.name}</Text>
+            <Text color={color}>{authData.name}</Text>
             <Text color="brand.200">Admin</Text>
         </Flex>
     </Flex>

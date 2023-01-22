@@ -20,7 +20,6 @@ interface PropsType {
 
 const ProductsTable = ({data, count, params}:PropsType) => {
     const dispatch = useAppDispatch()
-    const teal = useColorModeValue('brand.200', 'brand.100')
     const handleSearchPID = (pid:string) => {
       dispatch(STATE_ACTIONS.updateParams({pid, page:1}))
     }

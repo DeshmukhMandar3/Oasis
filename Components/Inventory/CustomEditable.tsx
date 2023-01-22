@@ -20,21 +20,23 @@ function CustomEditable({field, value, multiline=false, ...rest}:propType) {
       if (field===SortKeys.price||field===SortKeys.mrp||field===SortKeys.discount) e=Number(e)
       dispatch(STATE_ACTIONS.updateEDIT({[field]:e}))
     }
-    let EditableComponent = () => <Editable
+    let EditableComponent = React.useRef(() => 
+    <Editable
     defaultValue={String(value)}
     fontSize='sm'
     isPreviewFocusable={false}
     onSubmit={changeField}
-    {...rest}
-  >
-    <Flex gap="20px" align="center">
+    {...rest}>
+      <Flex gap="20px" align="center">
         <EditablePreview />
           {multiline?<Textarea resize="vertical" as={EditableTextarea}/>:<Input as={EditableInput} />}
         <EditableControls />
     </Flex>
-  </Editable>
+  </Editable>)
+     
+    
     React.useEffect(()=>{
-      EditableComponent = () => <Editable
+      EditableComponent.current = () => <Editable
       defaultValue={String(value)}
       fontSize='sm'
       isPreviewFocusable={false}
@@ -70,7 +72,7 @@ function CustomEditable({field, value, multiline=false, ...rest}:propType) {
     }
   
     return (
-      <EditableComponent/>
+      <EditableComponent.current/>
     )
   }
 

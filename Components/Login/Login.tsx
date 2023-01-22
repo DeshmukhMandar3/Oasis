@@ -25,8 +25,8 @@ import {
   }
 
   const initState:StateType = {
-    email:"",
-    password: ""
+    email:"admin@",
+    password: "admin@123"
   }
 
 function Login() {
@@ -34,8 +34,9 @@ function Login() {
     const {loading, error, invalid, isAuth} = useAppSelector(store=>store.Auth)
     const [form, setForm] = React.useState<StateType>(initState)
     const [empty, setEmpty] = React.useState<boolean>(false)
-    const handleChange = (e:InputEvent) =>{
-      setForm({...form, [e.target.name]:e.target.value})
+    const handleChange = (e:React.ChangeEvent) =>{
+      const input = e.target as HTMLInputElement
+      setForm({...form, [input.name]:input.value})
     }
     const onSubmit = () => {
       if (form.email==="" || form.password===""){

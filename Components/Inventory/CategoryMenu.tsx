@@ -8,7 +8,8 @@ import CategoryMenuList from './CategoryMenuList'
 const CategoryMenu = () => {
   const dispatch = useAppDispatch()
   const onClick = (e:React.MouseEvent) => {
-    dispatch(STATE_ACTIONS.updateParams({category:e.target.innerText, page:1}))
+    const input = e.target as HTMLElement;
+    dispatch(STATE_ACTIONS.updateParams({category:input.innerText, page:1}))
   }
   return (
     <Menu>
