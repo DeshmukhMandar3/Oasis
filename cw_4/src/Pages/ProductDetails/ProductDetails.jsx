@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductDetails.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Badge,
@@ -24,9 +24,12 @@ import {
   SliderTrack,
   SliderFilledTrack,
   Spinner,
+  useToast,
 } from "@chakra-ui/react";
 import Star from "../../components/StarRating/StarRating";
 import axios from "axios";
+import { Authcontext } from "../../AllContexts/AuthContext";
+import { useContext } from "react";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -41,6 +44,13 @@ const ProductDetails = () => {
   //const state for getcart trigger
   const [toggle, setToggle] = React.useState(false);
 
+  //Auth context
+  const userData = useContext(Authcontext);
+  const { auth } = useContext(Authcontext);
+  console.log(auth);
+
+  const userMail = userData.userdata.email;
+
   //Getting cart data
   React.useEffect(() => {
     async function getCart() {
@@ -54,18 +64,23 @@ const ProductDetails = () => {
   }, [toggle]);
 
   //Add to cart function
+  const toast = useToast({
+    title: `Product Added to the cart`,
+    status: "success",
+    isClosable: true,
+  });
   async function handleAddToCart() {
     let count = 1;
     let id = 0;
     cart.map((el) => {
-      if (el.pid === Product[0].id) {
+      if (el.pid === Product[0].id && userMail === el.email) {
         count = el.count + 1;
         id = el.id;
       }
     });
 
     if (count > 1) {
-      let updated = { id, count };
+      let updated = { id, count, email: userMail };
       setisLoading(true);
       let res = axios.patch(
         `https://backend-cw-4.onrender.com/cart/${id}`,
@@ -73,26 +88,35 @@ const ProductDetails = () => {
       );
       console.log(res);
       setisLoading(false);
+      toast();
       setToggle(!toggle);
     } else {
       id = Date.now();
       let pid = Product[0].id;
       count = 1;
+      let email = userMail;
       let details = {
         id,
         pid,
         count,
+        email,
       };
       setisLoading(true);
       let res1 = axios.post("https://backend-cw-4.onrender.com/cart", details);
       console.log(res1);
+
       setisLoading(false);
+      toast();
       setToggle(!toggle);
     }
   }
 
   //Buy now function
-  async function handleBuyNow() {}
+  const navigate = useNavigate();
+  async function handleBuyNow() {
+    handleAddToCart();
+    navigate("/cart");
+  }
 
   React.useEffect(() => {
     async function getDetails() {

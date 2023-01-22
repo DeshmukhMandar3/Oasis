@@ -40,6 +40,7 @@ const Navbar = () => {
       {/* navbar 1st part */}
 
       <div className="navbar_1st_part_div">
+        <Logout />
         <div className="navbar_app_part">
           <ul>
             <li>Sell With Us</li>
@@ -94,7 +95,7 @@ const Navbar = () => {
 
         {/* search functionality end*/}
         {/* address wishlist notification cart signin part */}
-        <Logout />
+
         <div className="navbar_address_section">
           <ul>
             <li>

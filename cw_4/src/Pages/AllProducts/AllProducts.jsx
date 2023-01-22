@@ -21,6 +21,8 @@ import "./AllProducts.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Link, useParams } from "react-router-dom";
+import { Authcontext } from "../../AllContexts/AuthContext";
+import { useContext } from "react";
 
 const AllProducts = () => {
   // Styling purpose
@@ -43,9 +45,12 @@ const AllProducts = () => {
   const [Discount, setDiscount] = React.useState([0, 100]);
   const [Rating, setRating] = React.useState([0, 5]);
 
+  //Auth context
+  const userData = useContext(Authcontext);
+  console.log(userData.userdata.email);
+
   //fetching data from server
   const { category } = useParams();
-  console.log(category);
   React.useEffect(() => {
     async function getData() {
       let type;
