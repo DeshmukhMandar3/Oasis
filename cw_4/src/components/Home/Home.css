@@ -143,9 +143,9 @@ body {
     /* overflow: scroll; */
   }
 
-  /* .item_home_div_all div {
-    width: 10%;
-  } */
+  .item_home_div_all div {
+    width: 80%;
+  }
 
   .item_home_div_all img {
     width: 145px;
@@ -163,7 +163,7 @@ body {
     width: 100%;
   display: flex;
   /* margin-left: 20px; */
-  /* flex-direction: row; */
+  flex-direction: row;
   overflow-x: scroll;
   /* position: relative; */
   scroll-behavior: smooth;
@@ -171,6 +171,9 @@ body {
   .home_gadgets_store::-webkit-scrollbar{
     display: none;
   }
+  /* .home_gadgets_childdiv{
+    width: 20%;
+  } */
 .home_arrow_btn{
   /* width: 25px;
   height: 25px; */
@@ -183,7 +186,7 @@ body {
   z-index: 999;
 }
 .home_arrow_btn img{
-  width: 100%;
+  width: 10%;
   height: 10%;
 }
 .home_left_icon{

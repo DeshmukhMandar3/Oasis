@@ -41,8 +41,10 @@
    
 }
 .navbar_website_logo a>img {
-    height: 100%;
-    padding: 6% 6% 6% 0%;
+    height: 130%;
+    /* width: 70%; */
+    padding: 6% 6% 6% 2%;
+    margin-top: -30px;
 }
 
 /* serach box */
@@ -56,7 +58,7 @@
     width: 75%;
     background-color: white;
     padding-left: 20px;
-    height: 40px;
+    height: 45px;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     /* background-clip: padding-box; */
@@ -67,7 +69,8 @@
     position: relative;
     z-index: 1;
     transition: all .2s ease-in-out;
-    top: -34px;
+    top: -40px;
+    margin-left: -130px;
 }
 
 .navbar_search_box > span .navbar_srch_btn{
@@ -76,7 +79,7 @@
     width: 111px;
     border-radius: 0px 4px 4px 0px;
     background-clip: padding-box;
-    height: 44px;
+    height: 45px;
     line-height: 15px;
     cursor: pointer;
     background-image: -webkit-linear-gradient(0deg,#ff934b 0%,#ff5e62 100%);
@@ -84,7 +87,7 @@
     color: #fffcfb;
     font-size: 15px;
     font-weight: 600;
-    top: 48px;
+    top: 42px;
     
 }
 /* search functionality div */
@@ -115,7 +118,7 @@
     display: inline-block;
     height: 75%;
     width: 30%;
-   
+   margin-top: 30px;
 }
 
 .navbar_address_section>div {
@@ -186,9 +189,9 @@
 }
 
 #navbar_userHeading_part{
-    width: 90%;
+    width: 100%;
     background: #24a3b5;
-    min-height: 40px;
+    min-height: 60px;
     color: #fff;
     position: relative;
     height: 40px;
@@ -204,10 +207,12 @@
 #navbar_userHeading_part>span {
     font-weight: 500;
     margin-left: 5%;
+    /* line-height: 2%; */
 }
 
 #navbar_userHeading_part>p {
     margin-left: 12%;
+    margin-top: 20px;
 }
 
 .navbar_hover_content_first ul>li {
@@ -217,8 +222,8 @@
     width: 120%;
     position: relative;
     padding-top: 5%;
-    margin-left: -20%;
-    padding-left: 15%;
+    margin-left: -40%;
+    /* padding-left: 15%; */
     font-size: 13px;
     cursor: pointer;
 }

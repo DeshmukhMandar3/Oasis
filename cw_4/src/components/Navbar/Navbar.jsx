@@ -89,8 +89,8 @@ const Navbar = () => {
             </div>
           );
         })}
+ {/* search functionality end*/}
 
-        {/* search functionality end*/}
         {/* address wishlist notification cart signin part */}
         <div className="navbar_address_section">
           <ul>

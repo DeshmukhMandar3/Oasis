@@ -28,7 +28,7 @@ const Home=()=>{
 }
     return(
         <>
-<Navbar/>
+{/* <Navbar/> */}
 {/* home first part  */}
 <div className="just_after_navbar_section">
       <div class="sliding_after_navbar_section">
@@ -352,7 +352,7 @@ const Home=()=>{
 
 
     </div>
-    <Footer/>
+    {/* <Footer/> */}
 </>
     )
 }
