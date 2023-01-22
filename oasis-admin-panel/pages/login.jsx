@@ -4,7 +4,7 @@ import Login from '../Components/Login/Login'
 
 const LoginPage = () => {
   return (
-    <Flex>
+    <Flex h="80vh">
       <Login/>
     </Flex>
   )
