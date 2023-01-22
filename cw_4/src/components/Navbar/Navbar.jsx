@@ -41,11 +41,13 @@ const Navbar = () => {
 
       <div className="navbar_1st_part_div">
         <div className="navbar_app_part">
+       
+
           <ul>
+          <li><Logout /></li>
             <li>Sell With Us</li>
             <li>Call Us</li>
             <li>Download App</li>
-            <li></li>
           </ul>
         </div>
 
@@ -111,6 +113,7 @@ const Navbar = () => {
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </li>
+           
 
             <li id="navbar_signin_section_first">
               <div class="navbar_hover_content_first">
@@ -166,7 +169,7 @@ const Navbar = () => {
           </ul>
           
         </div>
-        <div className="navbar_logout_btn_new"> <Logout /></div>
+        <div className="navbar_logout_btn_new"> </div>
        
       </div>
       {/* navbar 1st part completed */}
