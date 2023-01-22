@@ -33,7 +33,7 @@ const gadget_data = [
       dis: "79% off",
     },
     {
-      img: "https://cdn.shopclues.com/images1/thumbnails/76469/280/1/132457112-76469774-1667302731.jpg",
+      img: "https://cdn.shopclues.com/images1/thumbnails/86244/280/1/137679259-86244034-1668506624.jpg",
       name: "Refurbished Nokia 1100 Bla...",
       p1: "1199",
       p2: "1999",

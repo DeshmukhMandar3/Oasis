@@ -7,25 +7,26 @@ import { useState } from "react";
 import Logout from "../Authentication/Logout";
 
 // search functionality function
-export const fetchDataBySearch = async (query, page) => {
-  console.log("query 11", query);
+export const fetchDataBySearch = async (category, page) => {
+  // console.log("query 11", query);
   let res = await fetch(
-    `https://backend-cw-4.onrender.com/Products?q=${query}&_page=${page}&_limit=10`
+    `https://backend-cw-4.onrender.com/Products?product_category_tree_like=${category}&_page=${page}&_limit=10`
   );
   res = await res.json();
   return res;
 };
+// Products?q=${query}
 
 const Navbar = () => {
   // search functionality state manage and function call
-  const [query, setQuery] = useState("");
+  const [category, setQuery] = useState("");
   const [data, setdata] = useState([]);
   const [page, setPage] = useState(1);
   useEffect(() => {
     try {
-      if (query !== "") {
-        console.log("query 27", query);
-        fetchDataBySearch(query, page).then((res) => {
+      if (category !== "") {
+        // console.log("query 27", query);
+        fetchDataBySearch(category, page).then((res) => {
           console.log(res);
           setdata(res);
         });
@@ -33,7 +34,7 @@ const Navbar = () => {
     } catch (error) {
       console.log("error:", error);
     }
-  }, [query, page]);
+  }, [category, page]);
 
   return (
     <>
