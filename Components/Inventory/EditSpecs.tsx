@@ -8,7 +8,6 @@ import { useAppDispatch } from '../../Redux/app.hooks'
 import {Flex, Table, Tbody, Text, Th, Td, Tr, IconButton, useColorModeValue, Thead, Button, Tfoot, Input } from '@chakra-ui/react'
 import { STATE_ACTIONS } from '../../Redux/product/product.actions'
 const EditSpecs = ({specs}:{specs:specificationType[]}) => {
-    console.log(specs)
     const dispatch = useAppDispatch()
     const [KEY, setKey] = React.useState<string>("")
     const [VALUE, setValue] = React.useState<string>("")

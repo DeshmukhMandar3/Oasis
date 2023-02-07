@@ -2,8 +2,6 @@ import {AUTH_DATA} from './auth.actionTypes'
 import { getAdmin } from './auth.api'
 import { AppDispatch } from '../store'
 
-type ChangesType = Record <string, string|number|string[]>
-
 export const AUTH_ACTIONS = {
     login: (email:string, password:string) => async (dispatch:AppDispatch) => {
         dispatch({type:AUTH_DATA.LOGIN_LOADING})
@@ -11,8 +9,9 @@ export const AUTH_ACTIONS = {
         .then(res=>{
             let data = res.data
             if (data.length) {
-                localStorage.setItem('adminID-oasis', data[0].id)
-                dispatch({type:AUTH_DATA.LOGIN_SUCCESS, payload:data[0]})
+                const {name, email, mobile, id, image} = data[0]
+                localStorage.setItem('adminData-oasis', JSON.stringify({name, email, mobile, id, image}))
+                dispatch({type:AUTH_DATA.LOGIN_SUCCESS, payload:{name, email, mobile, id, image}})
             }
             else dispatch({type:AUTH_DATA.LOGIN_INVALID})
         })
@@ -23,7 +22,7 @@ export const AUTH_ACTIONS = {
     },
     logout: () => async (dispatch:AppDispatch) => {
         dispatch({type:AUTH_DATA.RESET})
-        localStorage.removeItem('adminID-oasis')
+        localStorage.removeItem('adminData-oasis')
     }
 }
 

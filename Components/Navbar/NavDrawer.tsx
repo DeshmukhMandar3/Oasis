@@ -34,7 +34,7 @@ export default function NavDrawer({isOpen, onClose, btnRef}) {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>
-                <AvatarGroup name="Madhurima Poddar" gap="10px" fontSize="sm"/>
+                <AvatarGroup gap="10px" fontSize="sm"/>
             </DrawerHeader>
   
             <DrawerBody>

@@ -46,7 +46,6 @@ function Login() {
       dispatch(AUTH_ACTIONS.login(form.email, form.password))
     }
     const color = useColorModeValue('brand.200', 'brand.100')
-    console.log(form)
     return (
       <Stack minH="100%" direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>

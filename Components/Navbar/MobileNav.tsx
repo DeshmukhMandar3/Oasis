@@ -2,11 +2,14 @@ import React from 'react'
 import {Flex, IconButton, Text, useColorModeValue, Image, useDisclosure} from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import NavDrawer from './NavDrawer'
+import { useRouter } from 'next/router'
 
 const MobileNav = ({...rest}) => {
     const img = useColorModeValue("OASIS.png", "OASIS_darkmode.png")
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
+    const router = useRouter()
+    let hide = router.pathname==='/login'
   return (
     <Flex
       px="2em"
@@ -22,6 +25,7 @@ const MobileNav = ({...rest}) => {
         variant="outline"
         onClick={onOpen}
         aria-label="open menu"
+        display={{base:hide?"none":"flex"}}
         icon={<FiMenu />}
       />
 

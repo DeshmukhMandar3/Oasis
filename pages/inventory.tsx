@@ -3,12 +3,12 @@ import Pagination from '../Components/Pagination/Pagination'
 import ProductsTable from '../Components/Inventory/ProductsTable'
 import Loader from '../Components/Loader'
 import ErrorIndicator from '../Components/Error'
+import AddProduct from '../Components/Inventory/AddProducts/AddProduct'
+import Head from 'next/head'
 
-import { Box } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { PRODUCTS_ACTIONS, STATE_ACTIONS } from '../Redux/products/products.actions'
 import { useAppDispatch, useAppSelector } from '../Redux/app.hooks'
-import { StateType } from '../Redux/products/products.reducer'
-import Head from 'next/head'
 
 const Inventory = () => {
   const {loading, error, data, count, params} = useAppSelector(store=>store.Products)
@@ -33,7 +33,10 @@ const Inventory = () => {
           data && 
           <>
             <ProductsTable data={data} count={count} params={params}/>
-            {count>1 && <Pagination current={params.page} total={Math.ceil(count/params.limit)} handlePageChange={(page)=>dispatch(STATE_ACTIONS.updateParams({page}))}/>}
+            <Flex justify="space-between">
+              {count>1 && <Pagination current={params.page} total={Math.ceil(count/params.limit)} handlePageChange={(page)=>dispatch(STATE_ACTIONS.updateParams({page}))}/>}
+              <AddProduct/>
+            </Flex>
           </>
           }
         </Box>

@@ -1,6 +1,7 @@
-import { PRODUCTS_DATA, PRODUCTS_API } from "./products.actionTypes";
+import { PRODUCTS_DATA, PRODUCTS_API } from "./profile.actionTypes";
+import DispatchPropsType from "../../GlobalTypes/DispatchPropsType";
 import { ProductType } from "../../GlobalTypes/ProductType";
-import { ParamsType } from "./products.api";
+import { ParamsType } from "./profile.api";
 
 export interface StateType {
     loading: boolean,

@@ -1,3 +1,4 @@
+import React from 'react'
 import {
     Button,
     Flex,
@@ -17,10 +18,16 @@ import {
   import { useAppDispatch, useAppSelector } from '../../Redux/app.hooks';
   import CustomEditable from '../Inventory/CustomEditable';
   export default function UserProfileEdit(): JSX.Element {
+    const [data, setData] = React.useState(null)
     const dispatch = useAppDispatch()
     const {authData} = useAppSelector(store=>store.Auth)
+    React.useEffect(()=>{
+      if (authData) setData(authData)
+      else setData(JSON.stringify(localStorage.getItem('adminData-oasis')))
+    }, [authData])
     return (
-      <Flex
+      <>
+      {data && <Flex
         minH="100%"
         maxW="500px"
         m="0 auto"
@@ -43,7 +50,7 @@ import {
             <FormLabel>User Icon</FormLabel>
             <Stack direction={['column', 'row']} spacing={6}>
               <Center>
-                <Avatar size="xl" src={authData.image}>
+                <Avatar size="xl" src={data.image}>
                   <AvatarBadge
                     as={IconButton}
                     size="sm"
@@ -60,23 +67,15 @@ import {
               </Center>
             </Stack>
           </FormControl>
-          <FormControl id="userName" isRequired>
+          <FormControl id="userName">
             <FormLabel>User name</FormLabel>
-            <Input
-              placeholder="UserName"
-              _placeholder={{ color: 'gray.500' }}
-              type="text"
-            />
+            <CustomEditable value={data.name} field="name" _placeholder={{ color: 'gray.500' }}/>
           </FormControl>
-          <FormControl id="email" isRequired>
+          <FormControl id="email">
             <FormLabel>Email address</FormLabel>
-            <Input
-              placeholder="your-email@example.com"
-              _placeholder={{ color: 'gray.500' }}
-              type="email"
-            />
+            <CustomEditable value={data.email} field="name" _placeholder={{ color: 'gray.500' }}/>
           </FormControl>
-          <FormControl id="password" isRequired>
+          <FormControl id="password">
             <FormLabel>Password</FormLabel>
             <Input
               placeholder="password"
@@ -105,6 +104,7 @@ import {
             </Button>
           </Stack>
         </Stack>
-      </Flex>
-    );
+      </Flex>}
+      </>)
+    
   }

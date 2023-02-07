@@ -4,15 +4,19 @@ import { useRouter } from 'next/router'
 const PrivateRoute = ({children}:{children:any}) => {
     const router = useRouter()
     const {isAuth} = useAppSelector(store=>store.Auth)
+    
     React.useEffect(()=>{
-        // const ls_id = localStorage.getItem('adminID-oasis')
         if (!isAuth && router.pathname!=="/login"){
             if (router) router.push('/login')
         }
-    }, [router.pathname, isAuth])
+    }, [router.pathname])
     React.useEffect(()=>{
         if (isAuth){
-            router.back()
+            if (router.pathname==="/login"){
+                router.back()
+            } else{
+                router.push(router.pathname)
+            }
         } else {
             router.push('/login')
         }

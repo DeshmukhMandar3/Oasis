@@ -1,7 +1,7 @@
 import React from 'react'
 import CategoryMenu from './CategoryMenu'
 import ProductRow from './ProductRow'
-import SearchFields from './SearchFields'
+import SearchFields from '../SearchFields'
 import SortFields from './SortFields'
 
 import { Table, Thead, Tbody, Tfoot, Th, Tr, IconButton, useColorModeValue } from '@chakra-ui/react'

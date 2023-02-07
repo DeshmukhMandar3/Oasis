@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Redux/products/products.actions.ts", "Components/Navbar/NavDrawer.jsx", "pages/inventory/[id].tsx", "pages/inventory.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Redux/products/products.actions.ts", "Components/Navbar/NavDrawer.tsx", "pages/inventory/[id].tsx", "pages/inventory.tsx"],
   "exclude": ["node_modules"]
 }

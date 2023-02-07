@@ -8,7 +8,7 @@ import EditImages from '../../Components/Inventory/EditImages'
 import { useRouter } from 'next/router'
 import { useAppDispatch, useAppSelector } from '../../Redux/app.hooks'
 import { PRODUCT_ACTIONS, STATE_ACTIONS } from '../../Redux/product/product.actions'
-import {Box, Flex, IconButton, Image, Input, SimpleGrid, Stack, Tabs, TabList, TabPanels, Tab, TabPanel, useColorModeValue,Button} from '@chakra-ui/react'
+import {Box, Flex, IconButton, Tabs, TabList, TabPanels, Tab, TabPanel, useColorModeValue,Button} from '@chakra-ui/react'
 import { GrPowerReset } from 'react-icons/gr'
 import CustomEditable from '../../Components/Inventory/CustomEditable'
 

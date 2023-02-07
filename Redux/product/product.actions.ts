@@ -21,7 +21,6 @@ export const PRODUCT_ACTIONS = {
         patchDataAPI(data, id)
         .then(res=>{
             dispatch({type:PRODUCT_DATA.UPDATE_SUCCESS, payload:res})
-            console.log(res)
         })
         .catch(err=>dispatch({type:PRODUCT_DATA.UPDATE_ERROR}))
     }
@@ -33,5 +32,6 @@ export const STATE_ACTIONS = {
     updateEDIT : (changes:ChangesType) => ({type:PRODUCT_API.UPDATE_EDITED, payload:changes}),
     updateSPEC : (key:string, value:string|number, i:number) => ({type:PRODUCT_API.UPDATE_SPEC, payload:{change:value, i}}),
     removeSPEC : (i:number) => ({type:PRODUCT_API.REMOVE_SPEC, payload:i}),
-    addSPEC : (key:string, value:string) => ({type:PRODUCT_API.ADD_SPEC, payload:{key, value}})
+    addSPEC : (key:string, value:string) => ({type:PRODUCT_API.ADD_SPEC, payload:{key, value}}),
+    addProdInit : () => ({type:PRODUCT_API.ADD_PRODUCT_INNIT}),
 }

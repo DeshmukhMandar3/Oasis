@@ -13,14 +13,13 @@ interface propType extends ChakraProps {
 }
 
 function CustomEditable({field, value, multiline=false, ...rest}:propType) {
-    const [val, setVal] = React.useState(value)
     const dispatch = useAppDispatch()
     const changeField = (e:string|number) => {
       if (field.includes('spec')) dispatch(STATE_ACTIONS.updateSPEC(field, e, +field[field.length-1]))
       if (field===SortKeys.price||field===SortKeys.mrp||field===SortKeys.discount) e=Number(e)
       dispatch(STATE_ACTIONS.updateEDIT({[field]:e}))
     }
-    let EditableComponent = React.useRef(() => 
+    let EditableComponent = () =>
     <Editable
     defaultValue={String(value)}
     fontSize='sm'
@@ -32,11 +31,11 @@ function CustomEditable({field, value, multiline=false, ...rest}:propType) {
           {multiline?<Textarea resize="vertical" as={EditableTextarea}/>:<Input as={EditableInput} />}
         <EditableControls />
     </Flex>
-  </Editable>)
+  </Editable>
      
     
     React.useEffect(()=>{
-      EditableComponent.current = () => <Editable
+      EditableComponent = () => <Editable
       defaultValue={String(value)}
       fontSize='sm'
       isPreviewFocusable={false}
@@ -72,8 +71,8 @@ function CustomEditable({field, value, multiline=false, ...rest}:propType) {
     }
   
     return (
-      <EditableComponent.current/>
+      <EditableComponent/>
     )
   }
 
-export default React.memo(CustomEditable)
+export default CustomEditable
