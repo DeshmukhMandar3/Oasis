@@ -17,8 +17,8 @@ Indicates invalid credentials, error & success. Doesn't allow submitting empty f
 ![login_dark](https://i.ibb.co/jbKfFF5/login2.png)
 
 <div style="display:flex;gap:10px;">
-<img src="https://i.ibb.co/D5h5HpV/login-phone.png" width="50%">
-<img src="https://i.ibb.co/chDWgxJ/login-phone-liget.png" width="50%">
+<img src="https://i.ibb.co/D5h5HpV/login-phone.png" height="700px">
+<img src="https://i.ibb.co/chDWgxJ/login-phone-liget.png" height="700px">
 </div>
 <br/>
 
