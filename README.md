@@ -10,7 +10,7 @@ Oasis is a clone of website called Shopclues.com. Which is an e-commerce website
 Admin-Panel Link : https://oasis-admin-panel.netlify.app
 
 # Tech-Stack
-ReactJS | Chakra-ui | NextJS(admin-panel) | Typescript(admin-panel) | Redux(admin-panel)
+ReactJS  |  Chakra-ui  |  NextJS(admin-panel)  |  Typescript(admin-panel)  |  Redux(admin-panel)
 
 # Features
 1. Admin and User authentication
