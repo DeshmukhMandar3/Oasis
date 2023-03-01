@@ -7,8 +7,7 @@ import { useState } from "react";
 import Logout from "../Authentication/Logout";
 import { Authcontext } from "../../AllContexts/AuthContext";
 import { useContext } from "react";
-import {GiCrossMark} from "react-icons/gi"
-
+import { GiCrossMark } from "react-icons/gi";
 
 // search functionality function
 export const fetchDataBySearch = async (category, page) => {
@@ -22,21 +21,19 @@ export const fetchDataBySearch = async (category, page) => {
 // Products?q=${query}
 
 const Navbar = () => {
-  const { auth} = useContext(Authcontext);
-  console.log(auth)
+  const { auth } = useContext(Authcontext);
+  console.log(auth);
   // search functionality state manage and function call
   const [category, setQuery] = useState("");
   const [data, setdata] = useState([]);
   const [page, setPage] = useState(1);
-  const cartfun=()=>{
-    if(auth)
-    {
-     window.location.href="/Mycart"
-     }
-    else{
-      alert("first login")
+  const cartfun = () => {
+    if (auth) {
+      window.location.href = "/cart";
+    } else {
+      alert("first login");
     }
-  }
+  };
   // const [toggle, settoggle]= useState(false)
   useEffect(() => {
     try {
@@ -92,7 +89,7 @@ const Navbar = () => {
         {data.map((el) => {
           return (
             <div className="search_div_box_start_nav">
-              <div className="search_div_box_start_nav_second_div" >
+              <div className="search_div_box_start_nav_second_div">
                 <NavLink
                   className="search_div_functionality_nav"
                   to={`/AllProducts/${el.id}`}
@@ -145,19 +142,10 @@ const Navbar = () => {
             <li>
               <i class="far fa-heart"></i>
             </li>
-            
+
             <li id="showcart">
-
-            
-              
-             
               <i class="fa-solid fa-cart-shopping" onClick={cartfun}></i>
-         
-            
-            
-              </li>
-           
-
+            </li>
 
             <li id="navbar_signin_section_first">
               <div class="navbar_hover_content_first">

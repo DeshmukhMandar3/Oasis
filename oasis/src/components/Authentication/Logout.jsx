@@ -80,7 +80,7 @@ function Logout() {
               <Button onClose={onClose}>
                 <Login />
               </Button>
-              <a href="https://course.masaischool.com/dashboard">
+              <a href="https://oasis-admin-panel.netlify.app/login">
                 <Button onClick={onClose}>Admin Login</Button>
               </a>
             </ModalBody>
