@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../components/Home/Home";
+
+import Home1 from "../components/homePage/Home1";
 import AllProducts from "../Pages/AllProducts/AllProducts";
 import Mycart from "../Pages/Mycart/Mycart";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
@@ -10,7 +11,7 @@ const GeneralRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home1 />} />
         <Route
           path="/AllProducts/:category"
           element={
