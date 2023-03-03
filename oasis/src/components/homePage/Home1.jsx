@@ -9,6 +9,8 @@ import Carousel2 from './SliderAlt';
 
 const Home1 = () => {
   return (
+
+    //home page 1st craousel
     <Box>
          <Box style={{backgroundColor:"#24a3b5",marginTop:"20px"}} >
             <Text style={{color:"white",padding:"3px 0px"}} >Free Shipping on Orders of $30 or More</Text>
@@ -28,7 +30,8 @@ const Home1 = () => {
           </Box>
           </Carousel>
      
-          <Carousel2  data={HomeData1} title={"B&N Top 100 Books"} />
+     {/* deals of the day craousel */}
+          <Carousel2  data={HomeData1} title={"Deals of the Day"} />
 
  
       
