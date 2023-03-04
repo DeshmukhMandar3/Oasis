@@ -3,6 +3,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Box, Image, Text } from '@chakra-ui/react';
 import HomeData1 from "../homePage/homedata/HomeData1.json"
+import HomeData2 from "../homePage/homedata/HomeData2.json"
+import HomeData3 from "../homePage/homedata/HomeData3.json"
+import HomeData4 from "../homePage/homedata/HomeData4.json"
+import HomeData5 from "../homePage/homedata/HomeData5.json"
+import HomeData6 from "../homePage/homedata/HomeData6.json"
+import HomeData7 from "../homePage/homedata/HomeData7.json"
+import HomeData8 from "../homePage/homedata/HomeData8.json"
+import HomeData9 from "../homePage/homedata/HomeData9.json"
 import Carousel2 from './SliderAlt';
 
 
@@ -33,8 +41,31 @@ const Home1 = () => {
      {/* deals of the day craousel */}
           <Carousel2  data={HomeData1} title={"Deals of the Day"} />
 
- 
+     {/* Trending Fashion Zone craousel */}
+          <Carousel2  data={HomeData2} title={"Trending Fashion Zone"} />
+
+      {/* Brand Store craousel */}
+          <Carousel2  data={HomeData3} title={"Brand Store"} />
+
+     {/* Daily Essentials craousel */}
+          <Carousel2  data={HomeData4} title={"Daily Essentials"} />
+
+    {/* Branded Deals craousel */}
+          <Carousel2  data={HomeData5} title={"Branded Deals"} />
       
+    {/* Festive Specials craousel */}
+          <Carousel2  data={HomeData6} title={"Festive Specials"} />
+
+    {/* Your Gadgets Store craousel */}
+          <Carousel2  data={HomeData7} title={"Your Gadgets Store"} />
+
+    {/* Prime Mall craousel */}
+          <Carousel2  data={HomeData8} title={"Prime Mall"} />
+
+    {/* Sports & Health craousel */}
+          <Carousel2  data={HomeData9} title={"Sports & Health"} />
+
+          
     </Box>
   )
 }
