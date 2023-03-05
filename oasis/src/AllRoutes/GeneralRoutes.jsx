@@ -15,17 +15,17 @@ const GeneralRoutes = () => {
         <Route
           path="/AllProducts/:category"
           element={
-            <PrivateRoutes>
+            
               <AllProducts />
-            </PrivateRoutes>
+            
           }
         />
         <Route
           path="/ProductDetails/:id"
           element={
-            <PrivateRoutes>
+          
               <ProductDetails />
-            </PrivateRoutes>
+            
           }
         />
         <Route
