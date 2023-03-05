@@ -14,8 +14,9 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Logout() {
+  const navigate=useNavigate()
   const { auth, setauth, userdata, setuserdata } = useContext(Authcontext);
 
   useEffect(() => {
@@ -57,6 +58,12 @@ function Logout() {
     } catch (error) {}
   };
 
+  //logout
+  const logoutfun=()=>{
+    setauth(false)
+    navigate("/")
+  }
+
   let useremail = userdata.email;
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -69,7 +76,7 @@ function Logout() {
         <Button onClick={onOpen}>Login</Button>
       )}
       {auth ? (
-        ""
+        <Button onClick={logoutfun}>Logout</Button>
       ) : (
         <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
