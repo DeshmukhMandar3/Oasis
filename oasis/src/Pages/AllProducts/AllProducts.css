@@ -113,6 +113,7 @@
   background-color: rgb(36, 163, 181);
   font-size: 14px;
   font-weight: bold;
+  width: 100px;
 }
 
 .prev:disabled {
@@ -145,4 +146,22 @@
   color: rgb(106, 151, 157);
   font-size: 14px;
   font-weight: bold;
+}
+
+.sort-filter-buttons-wrapper {
+  margin: 10px 0px;
+}
+
+.sort-filter-buttons {
+  width: 50%;
+  margin-left: 2px;
+  height: 40px;
+  background-color: rgb(36, 163, 181);
+  color: white;
+}
+
+.button-flex {
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
