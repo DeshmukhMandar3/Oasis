@@ -12,6 +12,7 @@ const ProductCard = ({ card }) => {
       className="card_wrapper"
       display={dis ? "none" : "block"}
       onClick={() => navigate(`/ProductDetails/${card.id}`)}
+      padding={{ base: "10px", md: "5px", lg: "5px" }}
     >
       <Box className="wishlist">
         <span class="material-symbols-rounded">favorite</span>
@@ -21,6 +22,7 @@ const ProductCard = ({ card }) => {
           className="image"
           src={card.image[0]}
           onError={(event) => setDis(true)}
+          padding={{ base: "5px", md: "none", lg: "none" }}
         />
       </Box>
       <Box className="made_in_india_box">

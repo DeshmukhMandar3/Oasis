@@ -88,8 +88,14 @@ const ProductDetails = () => {
         </Box>
       ) : (
         <>
-          <Flex className="details-top">
-            <Box className="image-box">
+          <Flex
+            className="details-top"
+            flexDirection={{ base: "column", md: "row", lg: "row" }}
+          >
+            <Box
+              className="image-box"
+              width={{ base: "100%", md: "50%", lg: "50%" }}
+            >
               <Box
                 className="wishlist"
                 onClick={() =>
