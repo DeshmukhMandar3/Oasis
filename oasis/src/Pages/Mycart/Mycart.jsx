@@ -12,14 +12,21 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import CartNav from "./CartNav";
 
 const Mycart = () => {
+  const navigate=useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [coupon, setCoupon] = useState("");
 
   const [count, setCount] = useState(1);
+
+  const paymentfun=()=>{
+    alert("Payment Successful")
+    navigate("/")
+  }
 
   const handleCount = (val) => {
     setCount(count + val);
@@ -174,7 +181,7 @@ const Mycart = () => {
           </div>
 
           <div style={{ marginTop: "15px" }} className="payment-btn">
-            <button style={{ marginLeft: "10px" }}>
+            <button style={{ marginLeft: "10px" }} onClick={paymentfun}>
               <Text fontSize={"xl"} fontWeight="bold" padding="10px">
                 Procced to Payment
               </Text>

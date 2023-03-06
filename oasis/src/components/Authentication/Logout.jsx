@@ -25,7 +25,7 @@ function Logout() {
 
   const usedatacheck = async () => {
     try {
-      let resdata = await axios.get("http://localhost:8080/user/");
+      let resdata = await axios.get("https://localhost:8080/user/");
       let data = resdata.data;
       if (data.length === 0) {
         // setuserdata([])
@@ -43,7 +43,7 @@ function Logout() {
   //delete data
   const deletedata = async () => {
     try {
-      let resdata = await axios.get("http://localhost:8080/user/");
+      let resdata = await axios.get("https://localhost:8080/user/");
       let data = resdata.data;
 
       userdatadelete(data[0].id);
@@ -53,7 +53,7 @@ function Logout() {
   };
   const userdatadelete = async (id) => {
     try {
-      let userdelete = await axios.delete(`http://localhost:8080/user/${id}`);
+      let userdelete = await axios.delete(`https://localhost:8080/user/${id}`);
       usedatacheck();
     } catch (error) {}
   };
