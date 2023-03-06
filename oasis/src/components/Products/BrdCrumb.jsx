@@ -4,6 +4,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Flex,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -14,6 +15,7 @@ const BrdCrumb = ({ Product }) => {
       <Breadcrumb
         spacing="8px"
         separator={<ChevronRightIcon color="gray.500" />}
+        sx={{ ol: { display: "flex", flexWrap: "wrap" } }}
       >
         <BreadcrumbItem>
           <BreadcrumbLink href="#">
