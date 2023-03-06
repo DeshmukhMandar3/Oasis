@@ -5,8 +5,11 @@ import Star from "../StarRating/StarRating";
 const ProductInfo = ({ Product }) => {
   console.log(Product);
   return (
-    <Flex>
-      <Box width="58%" className="prod-name-sold">
+    <Flex flexDirection={{ base: "column", md: "row", lg: "row" }}>
+      <Box
+        width={{ base: "100%", md: "58%", lg: "58%" }}
+        className="prod-name-sold"
+      >
         <Text fontSize={"18px"}>{Product && Product[0].product_name}</Text>
         <Text className="pid">Product Id : {Product && Product[0].pid}</Text>
         <Flex alignItems={"center"}>

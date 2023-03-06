@@ -13,7 +13,7 @@ const OneMoreOffer = () => {
           sell
         </span>
       </Flex>
-      <Flex className="MYOASIS">
+      <Flex className="MYOASIS" width={{ base: "100%", md: "50%", lg: "50%" }}>
         <Badge padding="5px" colorScheme="green" variant={"outline"}>
           MYOASIS
         </Badge>

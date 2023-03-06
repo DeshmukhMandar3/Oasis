@@ -3,7 +3,10 @@ import { Flex, Box, Image, Text } from "@chakra-ui/react";
 
 const Coupon = ({ Product }) => {
   return (
-    <Box className="coupon-wrapper">
+    <Box
+      className="coupon-wrapper"
+      width={{ base: "100%", md: "80%", lg: "80%" }}
+    >
       <Flex className="final-Price">
         <Box width={"7%"}>
           <Image src="https://images.shopclues.com/images/ui/super-star.png" />
