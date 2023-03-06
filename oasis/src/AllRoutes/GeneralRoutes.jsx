@@ -12,22 +12,8 @@ const GeneralRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home1 />} />
-        <Route
-          path="/AllProducts/:category"
-          element={
-            
-              <AllProducts />
-            
-          }
-        />
-        <Route
-          path="/ProductDetails/:id"
-          element={
-          
-              <ProductDetails />
-            
-          }
-        />
+        <Route path="/AllProducts/:category" element={<AllProducts />} />
+        <Route path="/ProductDetails/:id" element={<ProductDetails />} />
         <Route
           path="/cart"
           element={
