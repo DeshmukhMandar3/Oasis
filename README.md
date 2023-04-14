@@ -7,7 +7,7 @@ Oasis is a clone of website called Shopclues.com. Which is an e-commerce website
 3. Mandar Deshmukh- All Products Page & Single Product Page
 4. Madhurima Poddar- Admin Panel (including admin authentication)
 
-Admin-Panel Link : https://oasis-admin-panel.netlify.app
+Admin-Panel Link : https://oasis-backend.vercel.app
 
 # Tech-Stack
 ReactJS  |  Chakra-ui  |  NextJS(admin-panel)  |  Typescript(admin-panel)  |  Redux(admin-panel)
